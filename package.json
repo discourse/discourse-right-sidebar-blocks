@@ -1,7 +1,7 @@
 {
-  "name": "TODO",
+  "name": "discourse-right-sidebar-blocks",
   "version": "0.0.1",
-  "repository": "TODO",
+  "repository": "https://github.com/discourse/discourse-right-sidebar-blocks",
   "author": "Discourse",
   "license": "MIT",
   "devDependencies": {

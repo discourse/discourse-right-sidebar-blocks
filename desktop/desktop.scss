@@ -1,0 +1,56 @@
+body.tc-right-sidebar-enabled {
+  #list-area .contents {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "left right";
+    grid-column-gap: 2em;
+
+    .right-sidebar {
+      grid-area: right;
+    }
+    .topic-list {
+      grid-area: left;
+    }
+  }
+}
+
+.rs-component {
+  margin-bottom: 1.5em;
+  h3 {
+    border-bottom: 1px solid var(--primary-low);
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+// Top contributors
+.top-contributors--user {
+  margin-bottom: 0.5em;
+  display: grid;
+  grid-template-columns: auto 25%;
+  grid-template-areas: "left right";
+  grid-column-gap: 1em;
+}
+
+.top-contributors--user-badge {
+  grid-area: left;
+}
+
+.top-contributors--user-likes {
+  grid-area: right;
+  justify-self: end;
+}
+
+// Recent replies
+
+.recent-replies--reply {
+  border-bottom: 1px solid var(--primary-low);
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+.recent-replies--reply-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+}

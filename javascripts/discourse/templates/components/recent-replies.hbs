@@ -1,0 +1,24 @@
+<h3 class="recent-replies--heading">
+  {{theme-i18n "recent_replies.heading"}}
+</h3>
+
+<div class="recent-replies--container">
+  {{#each replies as |reply|}}
+    <div class="recent-replies--reply">
+      <div class="recent-replies--reply-meta">
+        {{avatar reply imageSize="small"}}
+        <span class="recent-replies--date">
+          {{format-date reply.created_at}}
+        </span>
+      </div>
+      <div class="recent-replies--excerpt">
+        {{reply.excerpt}}
+      </div>
+      <div class="recent-replies--topic-title">
+        <a href={{concat "/t/" reply.topic_slug "/" reply.topic_id "/" reply.post_number}}>
+          {{reply.topic_title}}
+        </a>
+      </div>
+    </div>
+  {{/each}}
+</div>

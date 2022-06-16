@@ -1,2 +1,8 @@
 en:
-  placeholder: placeholder
+  top_contributors:
+    heading: "Top contributors"
+    view_all: "View all"
+  popular_tags:
+    heading: "Popular tags"
+  recent_replies:
+    heading: "Recent replies"

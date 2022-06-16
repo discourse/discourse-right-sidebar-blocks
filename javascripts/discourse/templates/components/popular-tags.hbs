@@ -1,0 +1,9 @@
+<h3 class="popular-tags-heading">
+  {{theme-i18n "popular_tags.heading"}}
+</h3>
+
+{{#each topTags as |t|}}
+  <a href="/tags/{{t}}" class="popular-tags--tag">
+    {{t}}
+  </a>
+{{/each}}

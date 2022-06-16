@@ -1,0 +1,5 @@
+{{#each components as |item|}}
+  <div class={{item.classNames}}>
+    {{component item.name params=item.parsedParams}}
+  </div>
+{{/each}}
