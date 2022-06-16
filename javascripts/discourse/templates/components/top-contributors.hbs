@@ -5,7 +5,7 @@
 <div class="top-contributors--container">
   {{#each topContributors as |item|}}
     <div class="top-contributors--user">
-      <span data-user-card="{{item.user.username}}" class="top-contributors--user-badge">
+      <span data-user-card={{item.user.username}} class="top-contributors--user-badge">
         {{avatar item.user imageSize="small"}}
         {{html-safe item.user.username}}
       </span>
