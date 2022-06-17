@@ -1,0 +1,12 @@
+{{category-link category}}
+
+<div class="category-topics--content">
+  {{#each topics as |topic|}}
+    <a href={{topic.url}} class="category-topics--topic">
+      {{topic.fancy_title}}
+      <span class="category-topics--posts-count">
+        ({{topic.posts_count}})
+      </span>
+    </a>
+  {{/each}}
+</div>

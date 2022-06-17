@@ -55,3 +55,17 @@ body.tc-right-sidebar-enabled {
   justify-content: space-between;
   padding-bottom: 0.5em;
 }
+
+// category topics
+.category-topics--content {
+  padding: 0.5em 0;
+}
+
+.category-topics--topic {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.category-topics--posts-count {
+  color: var(--primary-high);
+}
