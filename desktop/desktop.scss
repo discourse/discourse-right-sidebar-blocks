@@ -7,7 +7,7 @@
   box-sizing: border-box;
   float: right;
 
-  // targent adjacent core layout element
+  // target adjacent core layout element
   + #list-area {
     width: calc(75% - 2.5em);
     float: left;
