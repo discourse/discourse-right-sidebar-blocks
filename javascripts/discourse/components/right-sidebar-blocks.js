@@ -1,27 +1,31 @@
 import GlimmerComponent from "discourse/components/glimmer";
+import { getOwner } from "@ember/application";
 import { tracked } from "@glimmer/tracking";
 
 export default class RightSidebarBlocks extends GlimmerComponent {
-  @tracked components = [];
+  @tracked blocks = [];
 
   constructor() {
     super(...arguments);
 
-    document.body.classList.add("tc-right-sidebar-enabled");
+    const blocksArray = [];
 
-    const componentsArray = JSON.parse(settings.components);
-    componentsArray.forEach((el) => {
-      el.classNames = `rs-component rs-${el.name}`;
-      el.parsedParams = {};
-      el.params.forEach((p) => {
-        el.parsedParams[p.name] = p.value;
-      });
+    JSON.parse(settings.blocks).forEach((block) => {
+      if (getOwner(this).hasRegistration(`component:${block.name}`)) {
+        block.classNames = `rs-component rs-${block.name}`;
+        block.parsedParams = {};
+        block.params.forEach((p) => {
+          block.parsedParams[p.name] = p.value;
+        });
+        blocksArray.push(block);
+      } else {
+        // eslint-disable-next-line no-console
+        console.warn(
+          `The component "${block.name}" was not found, please update the configuration for discourse-right-sidebar-blocks.`
+        );
+      }
     });
 
-    this.components = componentsArray;
-  }
-
-  willDestroy() {
-    document.body.classList.remove("tc-right-sidebar-enabled");
+    this.blocks = blocksArray;
   }
 }

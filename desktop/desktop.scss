@@ -1,16 +1,16 @@
-body.tc-right-sidebar-enabled {
-  #list-area .contents {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-areas: "left right";
-    grid-column-gap: 2em;
+// Using old-school floats on purpose here because
+// we can't easily know if sidebar is active in
+// the current route in the parent elements in core
+// and therefore can't use grid or flexbox
+.tc-right-sidebar {
+  width: 25%;
+  box-sizing: border-box;
+  float: right;
 
-    .right-sidebar {
-      grid-area: right;
-    }
-    .topic-list {
-      grid-area: left;
-    }
+  // targent adjacent core layout element
+  + #list-area {
+    width: calc(75% - 2.5em);
+    float: left;
   }
 }
 
