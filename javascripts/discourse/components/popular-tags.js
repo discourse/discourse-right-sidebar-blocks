@@ -9,7 +9,6 @@ export default class PopularTags extends GlimmerComponent {
     super(...arguments);
     const count = this.args?.params?.count || 10;
     const tagController = getOwner(this).lookup("controller:discovery/topics");
-    console.log(tagController);
 
     this.topTags = (tagController.get("model.topic_list.top_tags") || []).slice(
       0,
