@@ -8,8 +8,7 @@ export default {
 
       @discourseComputed("router.currentRouteName")
       showSidebar(currentRouteName) {
-        if (this.site.mobileView);
-        {
+        if (this.site.mobileView) {
           return false;
         }
         if (settings.show_in_routes !== "") {
