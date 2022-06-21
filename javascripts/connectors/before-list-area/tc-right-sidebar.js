@@ -8,6 +8,10 @@ export default {
 
       @discourseComputed("router.currentRouteName")
       showSidebar(currentRouteName) {
+        if (this.site.mobileView);
+        {
+          return false;
+        }
         if (settings.show_in_routes !== "") {
           const selectedRoutes = settings.show_in_routes.split("|");
           return selectedRoutes.includes(currentRouteName) ? true : false;
