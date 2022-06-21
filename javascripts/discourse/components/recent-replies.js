@@ -17,6 +17,8 @@ export default class RecentReplies extends GlimmerComponent {
 
     ajax(`/posts.json`).then((data) => {
       let results = [];
+      // TODO: would be good to add these params to the endpoint in core
+      // post_type and exclude_ops
 
       // limit to regular posts
       results = data.latest_posts.filter((post) => post.post_type === 1);

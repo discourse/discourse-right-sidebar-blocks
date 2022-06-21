@@ -21,6 +21,7 @@ export default class CategoryTopics extends GlimmerComponent {
 
     this.store.findFiltered("topicList", { filter }).then((result) => {
       const results = result.topic_list.topics;
+
       results.forEach((topic) => {
         topic.url = `${getURL("/t/")}${topic.slug}/${topic.id}`;
         if (topic.last_read_post_number > 0) {

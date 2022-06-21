@@ -8,9 +8,11 @@ export default class TopContributors extends GlimmerComponent {
   constructor() {
     super(...arguments);
 
+    const count = this.args?.params?.count || 5;
+
     ajax(`/directory_items.json?period=yearly&order=likes_received`).then(
       (data) => {
-        this.topContributors = data.directory_items.slice(1, 6);
+        this.topContributors = data.directory_items.slice(0, count);
       }
     );
   }
