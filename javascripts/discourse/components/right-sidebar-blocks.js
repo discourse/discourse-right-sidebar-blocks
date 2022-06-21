@@ -14,9 +14,11 @@ export default class RightSidebarBlocks extends GlimmerComponent {
       if (getOwner(this).hasRegistration(`component:${block.name}`)) {
         block.classNames = `rs-component rs-${block.name}`;
         block.parsedParams = {};
-        block.params.forEach((p) => {
-          block.parsedParams[p.name] = p.value;
-        });
+        if (block.params) {
+          block.params.forEach((p) => {
+            block.parsedParams[p.name] = p.value;
+          });
+        }
         blocksArray.push(block);
       } else {
         // eslint-disable-next-line no-console
