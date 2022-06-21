@@ -19,7 +19,7 @@ export default class CategoryTopics extends GlimmerComponent {
     const filter = "c/" + categoryId;
     this.category = Category.findById(categoryId);
 
-    this.store.findFiltered("topicList", { filter: filter }).then((result) => {
+    this.store.findFiltered("topicList", { filter }).then((result) => {
       const results = result.topic_list.topics;
       results.forEach((topic) => {
         topic.url = `${getURL("/t/")}${topic.slug}/${topic.id}`;
