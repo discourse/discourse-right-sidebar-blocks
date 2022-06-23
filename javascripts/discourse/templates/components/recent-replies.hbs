@@ -5,19 +5,23 @@
 <div class="recent-replies--container">
   {{#each replies as |reply|}}
     <div class="recent-replies--reply">
-      <div class="recent-replies--reply-meta">
+      <div class="recent-replies--col">
         {{avatar reply imageSize="small"}}
+      </div>
+      <div class="recent-replies--col">
+        <div class="recent-replies--excerpt">
+          {{reply.excerpt}}
+        </div>
+        <div class="recent-replies--topic-title">
+          <a class="recent-replies--topic-link" href={{concat "/t/" reply.topic_slug "/" reply.topic_id "/" reply.post_number}}>
+            {{reply.topic_title}}
+          </a>
+        </div>
+      </div>
+      <div class="recent-replies--col">
         <span class="recent-replies--date">
           {{format-date reply.created_at}}
         </span>
-      </div>
-      <div class="recent-replies--excerpt">
-        {{reply.excerpt}}
-      </div>
-      <div class="recent-replies--topic-title">
-        <a href={{concat "/t/" reply.topic_slug "/" reply.topic_id "/" reply.post_number}}>
-          {{reply.topic_title}}
-        </a>
       </div>
     </div>
   {{/each}}
