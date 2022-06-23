@@ -43,17 +43,26 @@
 }
 
 // Recent replies
-
 .recent-replies--reply {
   border-bottom: 1px solid var(--primary-low);
   padding-bottom: 0.5em;
   margin-bottom: 1em;
+  display: flex;
 }
 
-.recent-replies--reply-meta {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 0.5em;
+.recent-replies--col:first-child {
+  padding-top: 0.05em;
+}
+.recent-replies--col:nth-child(2) {
+  margin: 0 0.5em;
+  flex-shrink: 1;
+  max-width: 80%;
+  word-break: break-word;
+}
+
+.recent-replies--date {
+  font-size: var(--font-down-1);
+  color: var(--primary-medium);
 }
 
 // category topics
