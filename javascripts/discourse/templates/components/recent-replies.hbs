@@ -14,7 +14,7 @@
         </div>
         <div class="recent-replies--topic-title">
           <a class="recent-replies--topic-link" href={{concat "/t/" reply.topic_slug "/" reply.topic_id "/" reply.post_number}}>
-            {{reply.topic_title}}
+            {{html-safe (replace-emoji reply.topic_title)}}
           </a>
         </div>
       </div>
