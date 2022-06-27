@@ -3,14 +3,22 @@
 // the current route in the parent elements in core
 // and therefore can't use grid or flexbox
 .tc-right-sidebar {
-  width: 25%;
-  box-sizing: border-box;
-  float: right;
+  display: none;
+}
 
-  // target adjacent core layout element
-  + #list-area {
-    width: calc(75% - 2.5em);
-    float: left;
+@media screen and (min-width: 767px) {
+  // Show the sidebar at 767px
+  .tc-right-sidebar {
+    display: block;
+    width: 25%;
+    box-sizing: border-box;
+    float: right;
+
+    // target adjacent core layout element
+    + #list-area {
+      width: calc(75% - 2.5em);
+      float: left;
+    }
   }
 }
 
