@@ -86,3 +86,16 @@
 .category-topics--posts-count {
   color: var(--primary-high);
 }
+
+// Subcategory list
+
+.subcategory-list--item {
+  > .subcategory {
+    display: flex;
+    margin-bottom: 0.5em;
+  }
+
+  .badge-wrapper.bullet {
+    margin-right: auto;
+  }
+}
