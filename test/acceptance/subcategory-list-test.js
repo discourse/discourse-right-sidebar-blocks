@@ -16,7 +16,7 @@ acceptance("Right Sidebar - Subcategory List", function (needs) {
     settings.blocks = "[]";
   });
 
-  test("Viewing a category wuth subcategories", async function (assert) {
+  test("Viewing a category with subcategories", async function (assert) {
     // dev category in core fixtures has subcategories
     await visit("/c/dev");
 
