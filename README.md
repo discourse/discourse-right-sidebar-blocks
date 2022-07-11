@@ -14,8 +14,9 @@ This theme component includes a few blocks you can use in your sidebar:
 - recent-replies
 - category-topics
 - custom-html
+- subcategory-list
 
-You can also use other Ember components as blocks, you just need to use the correct name. For example, core includes a `signup-cta` Ember component, and you can use it in the sidebar as is. (Note that you can't use components that expects a set of parameters.)
+You can also use other Ember components as blocks, you just need to use the correct name. For example, core includes a `signup-cta` Ember component, and you can use it in the sidebar as is. (Note that you can't use components that expect a set of parameters.)
 
 ### Available block parameters
 

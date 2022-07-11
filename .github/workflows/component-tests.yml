@@ -28,7 +28,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        build_type: ["frontend-legacy", "frontend"]
+        build_type: ["frontend"]
 
     steps:
       - uses: actions/checkout@v3
@@ -131,14 +131,6 @@ jobs:
           if [ 0 -lt $(find tmp/component/test -type f \( -name "*.js" -or -name "*.es6" \) 2> /dev/null | wc -l) ]; then
             echo "::set-output name=files_exist::true"
           fi
-
-      - name: Component QUnit
-        if: matrix.build_type == 'frontend-legacy' && steps.check_qunit.outputs.files_exist == 'true'
-        run: |
-          THEME_NAME=$(ruby -e 'require "json"; puts JSON.parse(File.read("tmp/component/about.json"))["name"]')
-          bundle exec rake themes:install -- "--{\"$THEME_NAME\": \"tmp/component\"}"
-          QUNIT_EMBER_CLI=0 UNICORN_TIMEOUT=120 bundle exec rake "themes:qunit[name,$THEME_NAME]"
-        timeout-minutes: 10
 
       - name: Component QUnit (Ember CLI)
         if: matrix.build_type == 'frontend' && steps.check_qunit.outputs.files_exist == 'true'

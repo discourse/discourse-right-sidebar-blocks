@@ -6,3 +6,5 @@ en:
     heading: "Popular tags"
   recent_replies:
     heading: "Recent replies"
+  subcategory_list:
+    heading: "Subcategories"
