@@ -7,7 +7,7 @@
   <div class="subcategory-list--items">
     {{#each this.parentCategory.category.subcategories as |subcat|}}
       <div class="subcategory-list--item">
-        <SubCategoryItem @category={{subcat}} @listType={{this.listType}} />
+        <SubCategoryItem @category={{subcat}} />
       </div>
     {{/each}}
   </div>
