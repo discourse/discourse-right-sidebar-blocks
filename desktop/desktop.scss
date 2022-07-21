@@ -4,6 +4,13 @@
 // and therefore can't use grid or flexbox
 .tc-right-sidebar {
   display: none;
+  .signup-cta {
+    display: none;
+  }
+}
+
+.anon .tc-right-sidebar .signup-cta {
+  display: block;
 }
 
 @media screen and (min-width: 767px) {
