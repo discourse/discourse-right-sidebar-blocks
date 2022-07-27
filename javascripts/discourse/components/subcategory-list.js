@@ -15,6 +15,10 @@ export default class SubcategoryList extends GlimmerComponent {
   }
 
   shouldDisplay(parent) {
+    if (!parent || parent.category) {
+      return false;
+    }
+
     const displayInCategories = this.args?.params?.displayInCategories
       ?.split(",")
       .map(Number);
