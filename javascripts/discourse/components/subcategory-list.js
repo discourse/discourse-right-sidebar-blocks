@@ -15,7 +15,9 @@ export default class SubcategoryList extends GlimmerComponent {
   }
 
   shouldDisplay(parent) {
-    if (!parent || parent.category) {
+    const parentCategoryId = parent?.category?.id;
+
+    if (parentCategoryId === undefined) {
       return false;
     }
 
@@ -25,7 +27,7 @@ export default class SubcategoryList extends GlimmerComponent {
 
     return (
       displayInCategories === undefined ||
-      displayInCategories.includes(parent.category.id)
+      displayInCategories.includes(parentCategoryId)
     );
   }
 
