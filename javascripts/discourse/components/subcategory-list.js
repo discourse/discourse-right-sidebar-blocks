@@ -1,26 +1,27 @@
 import GlimmerComponent from "discourse/components/glimmer";
-import { getOwner } from "discourse-common/lib/get-owner";
 import { tracked } from "@glimmer/tracking";
+import { inject as service } from "@ember/service";
 
 export default class SubcategoryList extends GlimmerComponent {
+  @service router;
   @tracked parentCategory = null;
 
-  constructor() {
-    super(...arguments);
+  get shouldShowBlock() {
+    const currentRoute = this.router.currentRoute;
 
-    const parent = getOwner(this).lookup("controller:navigation/category");
-    if (parent && parent.showingParentCategory && this.shouldDisplay(parent)) {
-      this.parentCategory = parent;
-    }
-  }
-
-  shouldDisplay(parent) {
-    const parentCategoryId = parent?.category?.id;
-
-    if (parentCategoryId === undefined) {
+    if (currentRoute.attributes?.category === undefined) {
       return false;
     }
 
+    const category = currentRoute.attributes.category;
+    this.parentCategory = category;
+
+    if (category.subcategories && this.shouldDisplay(category.id)) {
+      return true;
+    }
+  }
+
+  shouldDisplay(parentCategoryId) {
     const displayInCategories = this.args?.params?.displayInCategories
       ?.split(",")
       .map(Number);
