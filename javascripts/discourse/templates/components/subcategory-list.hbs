@@ -1,11 +1,10 @@
-
-{{#if this.parentCategory.category.subcategories}}
+{{#if this.shouldShowBlock}}
   <h3 class="subcategory-list--heading">
     {{theme-i18n "subcategory_list.heading"}}
   </h3>
 
   <div class="subcategory-list--items">
-    {{#each this.parentCategory.category.subcategories as |subcat|}}
+    {{#each this.parentCategory.subcategories as |subcat|}}
       <div class="subcategory-list--item">
         <SubCategoryItem @category={{subcat}} />
       </div>
