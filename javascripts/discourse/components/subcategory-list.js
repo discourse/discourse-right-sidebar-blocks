@@ -9,9 +9,26 @@ export default class SubcategoryList extends GlimmerComponent {
     super(...arguments);
 
     const parent = getOwner(this).lookup("controller:navigation/category");
-    if (parent && parent.showingParentCategory) {
+    if (parent && parent.showingParentCategory && this.shouldDisplay(parent)) {
       this.parentCategory = parent;
     }
+  }
+
+  shouldDisplay(parent) {
+    const parentCategoryId = parent?.category?.id;
+
+    if (parentCategoryId === undefined) {
+      return false;
+    }
+
+    const displayInCategories = this.args?.params?.displayInCategories
+      ?.split(",")
+      .map(Number);
+
+    return (
+      displayInCategories === undefined ||
+      displayInCategories.includes(parentCategoryId)
+    );
   }
 
   willDestroy() {
