@@ -9,7 +9,7 @@ export default class SubcategoryList extends GlimmerComponent {
   get shouldShowBlock() {
     const currentRoute = this.router.currentRoute;
 
-    if (currentRoute.attributes?.category === undefined) {
+    if (!currentRoute.attributes?.category) {
       return false;
     }
 
@@ -19,6 +19,8 @@ export default class SubcategoryList extends GlimmerComponent {
     if (category.subcategories && this.shouldDisplay(category.id)) {
       return true;
     }
+
+    return false;
   }
 
   shouldDisplay(parentCategoryId) {

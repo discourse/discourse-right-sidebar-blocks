@@ -30,4 +30,11 @@ acceptance("Right Sidebar - Subcategory List", function (needs) {
       "subcategory-list has at least one visible item"
     );
   });
+
+  test("Viewing a tag route works fine", async function (assert) {
+    await visit("/tag/important");
+
+    // just check that no errors are raised in other routes
+    assert.ok(visible(".topic-list-body"), "main topic list is present");
+  });
 });
