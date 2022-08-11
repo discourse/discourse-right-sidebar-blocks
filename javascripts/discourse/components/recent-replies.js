@@ -1,4 +1,4 @@
-import GlimmerComponent from "discourse/components/glimmer";
+import Component from "@glimmer/component";
 import { ajax } from "discourse/lib/ajax";
 import { tracked } from "@glimmer/tracking";
 
@@ -7,7 +7,7 @@ function stripHtml(html) {
   return doc.body.textContent || "";
 }
 
-export default class RecentReplies extends GlimmerComponent {
+export default class RecentReplies extends Component {
   @tracked replies = null;
 
   constructor() {

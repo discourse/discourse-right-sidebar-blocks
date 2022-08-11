@@ -1,8 +1,8 @@
-import GlimmerComponent from "discourse/components/glimmer";
+import Component from "@glimmer/component";
 import { getOwner } from "@ember/application";
 import { tracked } from "@glimmer/tracking";
 
-export default class RightSidebarBlocks extends GlimmerComponent {
+export default class RightSidebarBlocks extends Component {
   @tracked blocks = [];
 
   constructor() {

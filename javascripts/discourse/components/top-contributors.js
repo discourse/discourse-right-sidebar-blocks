@@ -1,8 +1,8 @@
-import GlimmerComponent from "discourse/components/glimmer";
+import Component from "@glimmer/component";
 import { ajax } from "discourse/lib/ajax";
 import { tracked } from "@glimmer/tracking";
 
-export default class TopContributors extends GlimmerComponent {
+export default class TopContributors extends Component {
   @tracked topContributors = null;
 
   constructor() {
