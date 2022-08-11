@@ -1,9 +1,9 @@
 import Category from "discourse/models/category";
 import getURL from "discourse-common/lib/get-url";
-import GlimmerComponent from "discourse/components/glimmer";
+import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 
-export default class CategoryTopics extends GlimmerComponent {
+export default class CategoryTopics extends Component {
   @tracked topics = null;
   @tracked category = null;
 
