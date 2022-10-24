@@ -29,9 +29,20 @@ blocks:
         }
       }
     }
+scope_to_category:
+  type: bool
+  default: false
+  description: "Checking this box will scope the tags to the category. Leaving this unchecked (default) will show all tags across all categories."
+popular_tags_limit:
+  type: integer
+  default: 10
+  description: "The maximum amount of popular tags that will be shown."
+excluded_tags:
+  default: ""
+  description: "A comma separated list of tagnames that should be excluded from the popular tags component."
 show_in_routes:
   type: list
-  list_type: 'simple'
+  list_type: "simple"
   default: ""
   description: "Advanced users only: limit sidebar to the selected routes. When empty, the sidebar is shown on all topic list routes. <br/><br/>Examples: discovery.latest, discovery.unread, discovery.new, discovery.top, tag.show"
   allow_any: true
