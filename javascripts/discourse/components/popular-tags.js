@@ -11,9 +11,9 @@ export default class PopularTags extends Component {
     const count = this.args?.params?.count || 10;
     let tags;
     const excludedTags = this.args?.params?.excluded_tags || [];
-    const scope_to_category = this.args?.params?.scope_to_category || false;
+    const scopeToCategory = this.args?.params?.scope_to_category || false;
 
-    if (scope_to_category) {
+    if (scopeToCategory) {
       tags = this.site.category_top_tags;
     } else {
       tags = this.site.get("top_tags");
