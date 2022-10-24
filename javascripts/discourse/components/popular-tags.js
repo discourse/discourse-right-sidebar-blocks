@@ -13,11 +13,7 @@ export default class PopularTags extends Component {
     const excludedTags = this.args?.params?.excluded_tags || [];
     const scope_to_category = this.args?.params?.scope_to_category || false;
 
-    if (scope_to_category) {
-      tags = this.site.category_top_tags;
-    } else {
-      tags = this.site.get("top_tags");
-    }
+      const tags = scope_to_category ? this.site.category_top_tags : this.site.top_tags;
 
     if (excludedTags.length !== 0) {
       this.topTags = tags
