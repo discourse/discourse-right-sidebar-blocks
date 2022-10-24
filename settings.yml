@@ -31,7 +31,7 @@ blocks:
     }
 show_in_routes:
   type: list
-  list_type: 'simple'
+  list_type: "simple"
   default: ""
   description: "Advanced users only: limit sidebar to the selected routes. When empty, the sidebar is shown on all topic list routes. <br/><br/>Examples: discovery.latest, discovery.unread, discovery.new, discovery.top, tag.show"
   allow_any: true

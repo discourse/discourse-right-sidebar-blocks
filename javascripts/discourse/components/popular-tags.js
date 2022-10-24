@@ -9,7 +9,21 @@ export default class PopularTags extends Component {
   constructor() {
     super(...arguments);
     const count = this.args?.params?.count || 10;
-    this.topTags = (this.site.get("top_tags") || []).slice(0, count);
+    const excludedTags = this.args?.params?.excludedTags || [];
+    const scopeToCategory = this.args?.params?.scopeToCategory || false;
+    const tags = scopeToCategory
+      ? this.site.category_top_tags
+      : this.site.top_tags;
+
+    if (excludedTags.length !== 0) {
+      this.topTags = tags
+        .filter((tag) => {
+          return excludedTags.indexOf(tag) === -1;
+        })
+        .slice(0, count);
+    } else {
+      this.topTags = (tags || []).slice(0, count);
+    }
   }
 
   willDestroy() {
