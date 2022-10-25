@@ -4,10 +4,14 @@ import { inject as service } from "@ember/service";
 
 export default class PopularTags extends Component {
   @service site;
+  @service router;
+  @tracked parentCategory = null;
   @tracked topTags = null;
 
   constructor() {
     super(...arguments);
+    const currentRoute = this.router.currentRoute;
+    const category = currentRoute.attributes.category;
     const count = this.args?.params?.count || 10;
     const excludedTags = this.args?.params?.excludedTags || [];
     const scopeToCategory = this.args?.params?.scopeToCategory || false;
@@ -24,6 +28,30 @@ export default class PopularTags extends Component {
     } else {
       this.topTags = (tags || []).slice(0, count);
     }
+
+    if (!currentRoute.attributes?.category) {
+      return false;
+    }
+
+    this.parentCategory = category;
+
+    if (this.shouldDisplay(category.id)) {
+      //return true;
+    } else {
+      //  return false;
+    }
+  }
+
+  shouldDisplay(parentCategoryId) {
+    console.log("test", parentCategoryId);
+    const displayInCategories = this.args?.params?.displayInCategories
+      ?.split(",")
+      .map(Number);
+
+    return (
+      displayInCategories === undefined ||
+      displayInCategories.includes(parentCategoryId)
+    );
   }
 
   willDestroy() {
