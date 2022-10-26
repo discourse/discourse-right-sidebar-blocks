@@ -29,8 +29,6 @@ export default class PopularTags extends Component {
 
     if (this.topTags.length === 0) {
       return false;
-    } else if (!category) {
-      return true;
     } else if (!this.shouldDisplay(category.id)) {
       return false;
     } else {
