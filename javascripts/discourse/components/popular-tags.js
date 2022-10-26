@@ -37,13 +37,12 @@ export default class PopularTags extends Component {
   }
 
   shouldDisplay(categoryId) {
-    const displayInCategories = this.args?.params?.displayInCategories
-      ?.split(",")
-      .map(Number);
+    const displayInSpecificCategories =
+      this.args?.params?.displayInSpecificCategories?.split(",").map(Number);
 
     return (
-      displayInCategories === undefined ||
-      displayInCategories.includes(categoryId)
+      displayInSpecificCategories === undefined ||
+      displayInSpecificCategories.includes(categoryId)
     );
   }
 
