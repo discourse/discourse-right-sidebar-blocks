@@ -29,17 +29,13 @@ export default class PopularTags extends Component {
 
     if (this.topTags.length === 0) {
       return false;
-    }
-
-    if (!category) {
+    } else if (!category) {
+      return true;
+    } else if (!this.shouldDisplay(category.id)) {
+      return false;
+    } else {
       return true;
     }
-
-    if (!this.shouldDisplay(category.id)) {
-      return false;
-    }
-
-    return true;
   }
 
   shouldDisplay(categoryId) {
