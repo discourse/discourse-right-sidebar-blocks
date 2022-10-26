@@ -5,20 +5,17 @@ import { inject as service } from "@ember/service";
 export default class PopularTags extends Component {
   @service site;
   @service router;
-  @tracked parentCategory = null;
   @tracked topTags = null;
-  @tracked showTags = true;
 
-  constructor() {
-    super(...arguments);
+  get shouldShowBlock() {
     const currentRoute = this.router.currentRoute;
-    const category = currentRoute.attributes.category;
     const count = this.args?.params?.count || 10;
     const excludedTags = this.args?.params?.excludedTags || [];
     const scopeToCategory = this.args?.params?.scopeToCategory || false;
     const tags = scopeToCategory
       ? this.site.category_top_tags
       : this.site.top_tags;
+    const category = currentRoute.attributes?.category;
 
     if (excludedTags.length !== 0) {
       this.topTags = tags
@@ -30,25 +27,29 @@ export default class PopularTags extends Component {
       this.topTags = (tags || []).slice(0, count);
     }
 
-    if (!currentRoute.attributes?.category) {
+    if (this.topTags.length === 0) {
       return false;
     }
 
-    this.parentCategory = category;
+    if (!category) {
+      return true;
+    }
 
     if (!this.shouldDisplay(category.id)) {
-      this.showTags = false;
+      return false;
     }
+
+    return true;
   }
 
-  shouldDisplay(parentCategoryId) {
+  shouldDisplay(categoryId) {
     const displayInCategories = this.args?.params?.displayInCategories
       ?.split(",")
       .map(Number);
 
     return (
       displayInCategories === undefined ||
-      displayInCategories.includes(parentCategoryId)
+      displayInCategories.includes(categoryId)
     );
   }
 
