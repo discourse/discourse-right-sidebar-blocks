@@ -1,11 +1,13 @@
 {{#if topTags}}
-  <h3 class="popular-tags-heading">
-    {{theme-i18n "popular_tags.heading"}}
-  </h3>
+  {{#if showTags}}
+    <h3 class="popular-tags-heading">
+      {{theme-i18n "popular_tags.heading"}}
+    </h3>
 
-  {{#each topTags as |t|}}
-    <a href="/tag/{{t}}" class="popular-tags--tag">
-      {{t}}
-    </a>
-  {{/each}}
+    {{#each topTags as |t|}}
+      <a href="/tag/{{t}}" class="popular-tags--tag">
+        {{t}}
+      </a>
+    {{/each}}
+  {{/if}}
 {{/if}}

@@ -7,6 +7,7 @@ export default class PopularTags extends Component {
   @service router;
   @tracked parentCategory = null;
   @tracked topTags = null;
+  @tracked showTags = true;
 
   constructor() {
     super(...arguments);
@@ -35,15 +36,12 @@ export default class PopularTags extends Component {
 
     this.parentCategory = category;
 
-    if (this.shouldDisplay(category.id)) {
-      //return true;
-    } else {
-      //  return false;
+    if (!this.shouldDisplay(category.id)) {
+      this.showTags = false;
     }
   }
 
   shouldDisplay(parentCategoryId) {
-    console.log("test", parentCategoryId);
     const displayInCategories = this.args?.params?.displayInCategories
       ?.split(",")
       .map(Number);
