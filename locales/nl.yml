@@ -5,3 +5,12 @@
 # https://translate.discourse.org/
 
 nl:
+  top_contributors:
+    heading: "Topbijdragers"
+    view_all: "Alles weergeven"
+  popular_tags:
+    heading: "Populaire tags"
+  recent_replies:
+    heading: "Recente antwoorden"
+  subcategory_list:
+    heading: "Subcategorieën"
