@@ -1,0 +1,30 @@
+<h3 class="top-topics--heading">
+  {{theme-i18n "top_topics.heading"}}
+</h3>
+
+<div class="top-topics--container">
+  {{#each toptopics as |topic|}}
+    <div class="top-topics--topic">
+      <div class="top-topics--col">
+        <div class="top-topics--topic-title">
+          <a
+            class="top-topics--topic-link"
+            href={{concat "/t/" topic.slug "/" topic.id}}
+          >
+            {{html-safe (replace-emoji topic.title)}}
+          </a>
+        </div>
+      </div>
+      <div class="top-topics--col">
+        <span class="top-topics--date">
+          {{format-date topic.last_posted_at format="tiny"}}
+        </span>
+      </div>
+
+      <div class="top-topics--category">
+        {{category-link topic.category}}
+      </div>
+    </div>
+
+  {{/each}}
+</div>
