@@ -1,0 +1,34 @@
+<h3 class="featured-tag--heading">
+  {{theme-i18n "featured_tag.heading"}}
+</h3>
+
+<div class="featured-tag--container">
+  {{#each featured as |topic|}}
+    <div class="featured-tag--topic">
+      <div class="featured-tag--col">
+        <div class="featured-tag--topic-title">
+          <a
+            class="featured-tag--topic-link"
+            href={{concat "/t/" topic.slug "/" topic.id}}
+          >
+            {{html-safe (replace-emoji topic.title)}}
+          </a>
+        </div>
+      </div>
+      <div class="featured-tag--col">
+        <span class="featured-tag--date">
+          {{format-date topic.last_posted_at format="tiny"}}
+        </span>
+      </div>
+    </div>
+
+    <div class="featured-tag--category">
+      <a href={{concat "/c/" topic.category_name "/" topic.category_id}}>
+        {{#if topic.category_logo.url}}
+          <img src={{topic.category_logo.url}} />
+        {{/if}}
+        {{topic.category_name}}
+      </a>
+    </div>
+  {{/each}}
+</div>
