@@ -8,3 +8,5 @@ en:
     heading: "Recent replies"
   subcategory_list:
     heading: "Subcategories"
+  top_topics:
+    heading: "Top topics"
