@@ -1,0 +1,38 @@
+<h3 class="popular--heading">
+  {{theme-i18n "top_topics.heading"}}
+</h3>
+
+<div class="popular--container">
+
+  {{#each toptopics as |topic|}}
+    <div class="popular--topic">
+      <div class="popular--col">
+        <div class="popular--topic-title">
+          <a
+            class="popular--topic-link"
+            href={{concat "/t/" topic.slug "/" topic.id}}
+          >
+            {{html-safe (replace-emoji topic.title)}}
+          </a>
+        </div>
+      </div>
+      <div class="popular--col">
+        <span class="popular--date">
+          {{format-date topic.last_posted_at format="tiny"}}
+        </span>
+      </div>
+    </div>
+
+    <div class="popular--category">
+      <a
+        class=""
+        href={{concat "/c/" topic.category_name "/" topic.category_id}}
+      >
+        {{#if topic.category_logo.url}}
+          <img src={{topic.category_logo.url}} />
+        {{/if}}
+        {{topic.category_name}}
+      </a>
+    </div>
+  {{/each}}
+</div>
