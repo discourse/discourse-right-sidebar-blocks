@@ -1,0 +1,29 @@
+<h3 class="tag-topics__heading">
+  {{blockTitle}}
+</h3>
+
+<div class="tag-topics__container">
+  {{#each tagTopics as |topic|}}
+    <div class="tag-topics__topic">
+      <div class="tag-topics__col">
+        <div class="tag-topics__topic-title">
+          <a
+            class="tag-topics__topic-link"
+            href={{concat "/t/" topic.slug "/" topic.id}}
+          >
+            {{html-safe (replace-emoji topic.title)}}
+          </a>
+        </div>
+      </div>
+      <div class="tag-topics__col">
+        <span class="tag-topics__date">
+          {{format-date topic.last_posted_at format="tiny"}}
+        </span>
+      </div>
+
+      <div class="top-topics__category">
+        {{category-link topic.category}}
+      </div>
+    </div>
+  {{/each}}
+</div>
