@@ -32,7 +32,7 @@
 }
 
 // Top contributors
-.top-contributors__user {
+.top-contributors--user {
   margin-bottom: 0.5em;
   display: grid;
   grid-template-columns: auto 25%;
@@ -41,11 +41,11 @@
   cursor: pointer;
 }
 
-.top-contributors__user-badge {
+.top-contributors--user-badge {
   grid-area: left;
 }
 
-.top-contributors__user-likes {
+.top-contributors--user-likes {
   grid-area: right;
   justify-self: end;
 }
