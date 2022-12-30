@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 bg:
+  top_topics:
+    heading: "Топ теми"

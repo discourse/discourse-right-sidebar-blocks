@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 zh_TW:
+  top_topics:
+    heading: "熱門討論話題"

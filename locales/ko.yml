@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 ko:
+  top_topics:
+    heading: "주요 글"

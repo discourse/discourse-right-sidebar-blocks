@@ -14,3 +14,5 @@ nl:
     heading: "Recente antwoorden"
   subcategory_list:
     heading: "Subcategorieën"
+  top_topics:
+    heading: "Toptopics"

@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 vi:
+  top_topics:
+    heading: "Top chủ đề"

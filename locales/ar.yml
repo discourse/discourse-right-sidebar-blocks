@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 ar:
+  top_topics:
+    heading: "الموضوعات الأكثر نشاطًا"

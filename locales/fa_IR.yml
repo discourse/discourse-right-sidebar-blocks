@@ -5,3 +5,14 @@
 # https://translate.discourse.org/
 
 fa_IR:
+  top_contributors:
+    heading: "مشارکت‌کنندگان برتر"
+    view_all: "مشاهده همه"
+  popular_tags:
+    heading: "برچسب‌های محبوب"
+  recent_replies:
+    heading: "پاسخ‌های اخیر"
+  subcategory_list:
+    heading: "زیر مجموعه‌های دسته‌بندی"
+  top_topics:
+    heading: "برترین موضوعات"
