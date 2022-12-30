@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 fi:
+  top_topics:
+    heading: "Suositut ketjut"

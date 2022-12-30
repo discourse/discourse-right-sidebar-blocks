@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 hr:
+  top_topics:
+    heading: "Top teme"

@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 gl:
+  top_topics:
+    heading: "Temas destacados"

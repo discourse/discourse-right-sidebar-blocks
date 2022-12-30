@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 nb_NO:
+  top_topics:
+    heading: "Mest populære emner"

@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 it:
+  top_topics:
+    heading: "Argomenti di punta"
