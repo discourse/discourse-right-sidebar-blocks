@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 pl_PL:
+  top_topics:
+    heading: "Najlepsze tematy"

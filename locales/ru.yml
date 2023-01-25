@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 ru:
+  top_topics:
+    heading: "Лучшие темы"

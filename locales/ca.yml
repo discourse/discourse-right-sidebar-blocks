@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 ca:
+  top_topics:
+    heading: "Temes principals"

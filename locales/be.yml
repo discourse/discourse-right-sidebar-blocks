@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 be:
+  top_topics:
+    heading: "Папулярныя тэмы"

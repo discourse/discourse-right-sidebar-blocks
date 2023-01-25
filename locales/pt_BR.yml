@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  top_topics:
+    heading: "Tópicos principais"
