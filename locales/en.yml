@@ -10,3 +10,5 @@ en:
     heading: "Subcategories"
   top_topics:
     heading: "Top topics"
+  category_list:
+    heading: "Categories"

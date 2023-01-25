@@ -17,6 +17,7 @@ This theme component includes a few blocks you can use in your sidebar:
 - subcategory-list
 - tag-topics
 - top-topics
+- category-list
 
 You can also use other Ember components as blocks, you just need to use the correct name. For example, core includes a `signup-cta` Ember component, and you can use it in the sidebar as is. (Note that you can't use components that expect a set of parameters.)
 
@@ -36,3 +37,4 @@ You can control some features for the provided blocks via parameters.
 |id | leaderboard id |  | number | minimal-gamification-leaderboard|
 |tag | which tag to display |  | tag id | tag-topics |
 |period | time period of top topics | weekly | all, yearly, quarterly, monthly, weekly, daily | top-topics |
+|title | title of the block | varies | string | tag-topics, category-list |
