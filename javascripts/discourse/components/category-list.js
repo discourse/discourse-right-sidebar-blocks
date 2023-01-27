@@ -8,7 +8,7 @@ export default class CategoryList extends Component {
     this.blockTitle =
       this.args?.params?.title || I18n.t(themePrefix("category_list.heading"));
 
-    this.categoryList = settings.category_list.split("|");
+    this.categoryList = this.args?.params?.id.split(",");
     this.categoryList.forEach(function (id, i, arr) {
       arr[i] = Category.findById(id);
     });

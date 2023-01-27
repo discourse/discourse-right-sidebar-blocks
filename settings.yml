@@ -36,8 +36,3 @@ show_in_routes:
   description: "Advanced users only: limit sidebar to the selected routes. When empty, the sidebar is shown on all topic list routes. <br/><br/>Examples: discovery.latest, discovery.unread, discovery.new, discovery.top, tag.show"
   allow_any: true
   choices:
-category_list:
-  type: list
-  list_type: category
-  default: ""
-  description: "Categories selected here will appear as a list in the category-list block"
