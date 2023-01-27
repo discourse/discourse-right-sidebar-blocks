@@ -12,5 +12,8 @@ export default class CategoryList extends Component {
     this.categoryList.forEach(function (id, i, arr) {
       arr[i] = Category.findById(id);
     });
+    if (!this.categoryList) {
+      return;
+    }
   }
 }
