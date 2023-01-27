@@ -9,11 +9,11 @@ export default class CategoryList extends Component {
       this.args?.params?.title || I18n.t(themePrefix("category_list.heading"));
 
     this.categoryList = this.args?.params?.id.split(",");
-    this.categoryList.forEach(function (id, i, arr) {
-      arr[i] = Category.findById(id);
-    });
     if (!this.categoryList) {
       return;
     }
+    this.categoryList.forEach(function (id, i, arr) {
+      arr[i] = Category.findById(id);
+    });
   }
 }
