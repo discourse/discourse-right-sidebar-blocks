@@ -1,0 +1,11 @@
+<h3 class="category-list__heading">
+  {{blockTitle}}
+</h3>
+
+<div class="category-list__container">
+  {{#each categoryList as |category|}}
+    <div class="category-list__category">
+      {{category-link category}}
+    </div>
+  {{/each}}
+</div>

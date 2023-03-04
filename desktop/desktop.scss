@@ -132,3 +132,11 @@
     margin-right: auto;
   }
 }
+
+// category list
+
+.category-list__category {
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
