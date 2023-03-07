@@ -7,3 +7,5 @@
 es:
   top_topics:
     heading: "Temas destacados"
+  category_list:
+    heading: "Categorías"

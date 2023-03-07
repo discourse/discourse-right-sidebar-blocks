@@ -7,3 +7,5 @@
 fr:
   top_topics:
     heading: "Meilleurs sujets"
+  category_list:
+    heading: "Catégories"

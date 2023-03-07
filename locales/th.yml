@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 th:
+  category_list:
+    heading: "หมวดหมู่"

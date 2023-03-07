@@ -7,3 +7,5 @@
 ca:
   top_topics:
     heading: "Temes principals"
+  category_list:
+    heading: "Categories"

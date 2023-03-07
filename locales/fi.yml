@@ -7,3 +7,5 @@
 fi:
   top_topics:
     heading: "Suositut ketjut"
+  category_list:
+    heading: "Luokat"

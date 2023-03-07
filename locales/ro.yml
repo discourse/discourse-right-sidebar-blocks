@@ -7,3 +7,5 @@
 ro:
   top_topics:
     heading: "Subiecte fierbinți"
+  category_list:
+    heading: "Categorii"

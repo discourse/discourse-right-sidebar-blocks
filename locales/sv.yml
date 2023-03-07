@@ -7,3 +7,5 @@
 sv:
   top_topics:
     heading: "Toppämnen"
+  category_list:
+    heading: "Kategorier"

@@ -7,3 +7,5 @@
 tr_TR:
   top_topics:
     heading: "En iyi konular"
+  category_list:
+    heading: "Kategoriler"

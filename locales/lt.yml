@@ -7,3 +7,5 @@
 lt:
   top_topics:
     heading: "Top temos"
+  category_list:
+    heading: "Kategorijos"

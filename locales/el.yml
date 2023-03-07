@@ -7,3 +7,5 @@
 el:
   top_topics:
     heading: "Κορυφαία νήματα"
+  category_list:
+    heading: "Κατηγορίες"

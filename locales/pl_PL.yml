@@ -7,3 +7,5 @@
 pl_PL:
   top_topics:
     heading: "Najlepsze tematy"
+  category_list:
+    heading: "Kategorie"

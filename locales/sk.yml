@@ -7,3 +7,5 @@
 sk:
   top_topics:
     heading: "Top témy"
+  category_list:
+    heading: "Kategórie"

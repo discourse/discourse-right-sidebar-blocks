@@ -7,3 +7,5 @@
 ko:
   top_topics:
     heading: "주요 글"
+  category_list:
+    heading: "카테고리"

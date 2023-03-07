@@ -7,3 +7,5 @@
 sw:
   top_topics:
     heading: "Mada za juu"
+  category_list:
+    heading: "Kategoria"

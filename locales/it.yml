@@ -7,3 +7,5 @@
 it:
   top_topics:
     heading: "Argomenti di punta"
+  category_list:
+    heading: "Categorie"
