@@ -7,3 +7,5 @@
 hu:
   top_topics:
     heading: "Top témák"
+  category_list:
+    heading: "Kategóriák"

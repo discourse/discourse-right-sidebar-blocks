@@ -7,3 +7,5 @@
 sr:
   top_topics:
     heading: "Top teme"
+  category_list:
+    heading: "Kategorije"

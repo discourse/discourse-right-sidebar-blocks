@@ -7,3 +7,5 @@
 ru:
   top_topics:
     heading: "Лучшие темы"
+  category_list:
+    heading: "Категории"

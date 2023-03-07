@@ -7,3 +7,5 @@
 cs:
   top_topics:
     heading: "Nejlepší témata"
+  category_list:
+    heading: "Kategorie"

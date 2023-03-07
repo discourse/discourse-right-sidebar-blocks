@@ -7,3 +7,5 @@
 ja:
   top_topics:
     heading: "人気のトピック"
+  category_list:
+    heading: "カテゴリ"

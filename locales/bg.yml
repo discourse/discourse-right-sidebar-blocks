@@ -7,3 +7,5 @@
 bg:
   top_topics:
     heading: "Топ теми"
+  category_list:
+    heading: "Категории"

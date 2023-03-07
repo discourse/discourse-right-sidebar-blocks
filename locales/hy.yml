@@ -7,3 +7,5 @@
 hy:
   top_topics:
     heading: "Թոփ թեմաները"
+  category_list:
+    heading: "Կատեգորիաներ"

@@ -7,3 +7,5 @@
 nb_NO:
   top_topics:
     heading: "Mest populære emner"
+  category_list:
+    heading: "Kategorier"

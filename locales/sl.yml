@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 sl:
+  category_list:
+    heading: "Kategorije"

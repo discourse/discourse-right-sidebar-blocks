@@ -16,3 +16,5 @@ nl:
     heading: "Subcategorieën"
   top_topics:
     heading: "Toptopics"
+  category_list:
+    heading: "Categorieën"

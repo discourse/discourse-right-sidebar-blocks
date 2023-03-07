@@ -7,3 +7,5 @@
 pt_BR:
   top_topics:
     heading: "Tópicos principais"
+  category_list:
+    heading: "Categorias"

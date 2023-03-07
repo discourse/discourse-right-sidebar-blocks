@@ -7,3 +7,5 @@
 da:
   top_topics:
     heading: "Populære emner"
+  category_list:
+    heading: "Kategorier"

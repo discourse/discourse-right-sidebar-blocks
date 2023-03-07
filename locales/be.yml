@@ -7,3 +7,5 @@
 be:
   top_topics:
     heading: "Папулярныя тэмы"
+  category_list:
+    heading: "катэгорыі"

@@ -7,3 +7,5 @@
 ar:
   top_topics:
     heading: "الموضوعات الأكثر نشاطًا"
+  category_list:
+    heading: "الفئات"

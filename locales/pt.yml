@@ -7,3 +7,5 @@
 pt:
   top_topics:
     heading: "Melhores tópicos"
+  category_list:
+    heading: "Categorias"

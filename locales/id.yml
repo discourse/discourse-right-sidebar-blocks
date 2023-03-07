@@ -7,3 +7,5 @@
 id:
   top_topics:
     heading: "Topik unggulan"
+  category_list:
+    heading: "Kategori"
