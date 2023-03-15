@@ -1,6 +1,8 @@
 import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import discoveryFixture from "discourse/tests/fixtures/discovery-fixtures";
+import { cloneJSON } from "discourse-common/lib/object";
 
 acceptance("Right Sidebar", function () {
   test("Viewing latest", async function (assert) {
@@ -20,12 +22,29 @@ acceptance("Right Sidebar", function () {
 });
 
 acceptance("Right Sidebar - custom routes", function (needs) {
+  needs.settings({ tagging_enabled: true });
+
   needs.hooks.beforeEach(() => {
-    settings.show_in_routes = "discovery.categories|discovery.top";
+    settings.show_in_routes =
+      "discovery.categories|discovery.top|c/bug|tag/important";
   });
 
   needs.hooks.afterEach(() => {
     settings.blocks = "[]";
+  });
+
+  needs.pretender((server, helper) => {
+    server.get(`/c/bug/1/l/latest.json`, () => {
+      return helper.response(
+        cloneJSON(discoveryFixture["/c/bug/1/l/latest.json"])
+      );
+    });
+
+    server.get(`/tag/important/l/latest.json`, () => {
+      return helper.response(
+        cloneJSON(discoveryFixture["/tag/important/l/latest.json"])
+      );
+    });
   });
 
   test("Viewing latest", async function (assert) {
@@ -48,10 +67,26 @@ acceptance("Right Sidebar - custom routes", function (needs) {
 
   test("Viewing top", async function (assert) {
     await visit("/top");
-
     assert.ok(
       visible(".tc-right-sidebar"),
       "sidebar present under /top due to theme setting"
+    );
+  });
+
+  test("Viewing the bug category", async function (assert) {
+    await visit("/c/bug/l/latest");
+    assert.ok(
+      visible(".tc-right-sidebar"),
+      "sidebar present under the bug category"
+    );
+  });
+
+  test("Viewing the important tag", async function (assert) {
+    await visit("/tag/important");
+
+    assert.ok(
+      visible(".tc-right-sidebar"),
+      "sidebar present under the important tag"
     );
   });
 });
