@@ -3,7 +3,7 @@
 Adds ability to display a right-sided sidebar to topic list routes. There are two settings included:
 
 - `blocks`: choose the blocks to display and adjust their ordering
-- `show_in_routes`: decide which routes to display the sidebar (by default, it will show on all discovery routes except for `/categories`)
+- `show_in_routes`: decide which routes to display the sidebar (by default, it will show on all lists except for `/categories`)
 
 ### Included blocks
 
