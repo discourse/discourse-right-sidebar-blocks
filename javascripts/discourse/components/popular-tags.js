@@ -13,7 +13,7 @@ export default class PopularTags extends Component {
     const excludedTags = this.args?.params?.excludedTags || [];
     const scopeToCategory = this.args?.params?.scopeToCategory || false;
     const tags =
-      (scopeToCategory ? this.site.category_top_tags : this.site.top_tags) ??
+      (scopeToCategory ? this.site.category_top_tags : this.site.top_tags) ||
       [];
     const category = currentRoute.attributes?.category;
 
