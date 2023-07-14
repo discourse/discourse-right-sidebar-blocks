@@ -12,9 +12,9 @@ export default class PopularTags extends Component {
     const count = this.args?.params?.count || 10;
     const excludedTags = this.args?.params?.excludedTags || [];
     const scopeToCategory = this.args?.params?.scopeToCategory || false;
-    const tags = scopeToCategory
-      ? this.site.category_top_tags
-      : this.site.top_tags;
+    const tags =
+      (scopeToCategory ? this.site.category_top_tags : this.site.top_tags) ||
+      [];
     const category = currentRoute.attributes?.category;
 
     if (excludedTags.length !== 0) {
