@@ -13,8 +13,13 @@
         {{html-safe item.user.username}}
       </span>
       <span class="top-contributors--user-likes">
-        {{d-icon "heart"}}
-        {{item.likes_received}}
+        {{#if (this.order "likes_received")}}
+          {{d-icon "heart"}}
+          {{item.likes_received}}
+        {{else}}
+          {{d-icon "heart"}}
+          {{item.likes_given}}
+        {{/if}}
       </span>
     </div>
   {{/each}}
@@ -22,7 +27,7 @@
 
 <a
   class="top-contributors--view-all"
-  href="/u?order=likes_received&period=yearly"
+  href={{this.viewAllUrl}}
 >
   {{theme-i18n "top_contributors.view_all"}}
 </a>
