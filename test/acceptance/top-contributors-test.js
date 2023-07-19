@@ -75,11 +75,11 @@ acceptance("Right Sidebar - Top Contributors - Custom count", function (needs) {
     await visit("/");
 
     assert
-      .dom(".order--likes_given")
-      .isNotVisible("likes_given class is not added");
+      .dom(".top-contributors--user-likes")
+      .doesNotHaveClass(".order--likes_given")
     assert
-      .dom(".order--likes_received")
-      .isVisible("likes_received class is added correctly");
+      .dom(".top-contributors--user-likes")
+      .doesHaveClass(".order--likes_received")
 
     assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
     assert.ok(
