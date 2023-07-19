@@ -79,7 +79,7 @@ acceptance("Right Sidebar - Top Contributors - Custom count", function (needs) {
       .doesNotHaveClass(".order--likes_given");
     assert
       .dom(".top-contributors--user-likes")
-      .doesHaveClass(".order--likes_received");
+      .hasClass(".order--likes_received");
 
     assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
     assert.ok(
@@ -150,7 +150,7 @@ acceptance(
 
       assert
         .dom(".top-contributors--user-likes")
-        .doesHaveClass(".order--likes_given");
+        .hasClass(".order--likes_given");
       assert
         .dom(".top-contributors--user-likes")
         .doesNotHaveClass(".order--likes_received");
