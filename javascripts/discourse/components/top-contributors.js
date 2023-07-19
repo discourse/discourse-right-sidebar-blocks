@@ -11,12 +11,12 @@ export default class TopContributors extends Component {
   constructor() {
     super(...arguments);
 
-    ajax(this.#requestURL()).then((data) => {
+    ajax(this.requestURL).then((data) => {
       this.topContributors = data.directory_items?.slice(0, this.count);
     });
   }
 
-  #requestURL() {
+  get requestURL() {
     const excludedGroupNames = this.args.params?.excludedGroupNames || "";
     return `/directory_items.json?period=${this.period}&order=${this.order}&exclude_groups=${excludedGroupNames}&limit=${this.count}`;
   }
