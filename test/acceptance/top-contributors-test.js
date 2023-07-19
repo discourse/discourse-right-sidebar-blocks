@@ -149,11 +149,11 @@ acceptance(
       await visit("/");
 
       assert
-        .dom(".order--likes_given")
-        .isVisible("likes_given class is added correctly");
+        .dom(".top-contributors--user-likes")
+        .doesHaveClass(".order--likes_given")
       assert
-        .dom(".order--likes_received")
-        .isNotVisible("likes_received class is not added");
+        .dom(".top-contributors--user-likes")
+        .doesNotHaveClass(".order--likes_received")
 
       assert.dom(".tc-right-sidebar").isVisible("sidebar element is present");
       assert
