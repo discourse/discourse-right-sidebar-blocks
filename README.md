@@ -40,5 +40,5 @@ You can control some features for the provided blocks via parameters.
 | title                       | title of the block                    | varies         | string                                           | tag-topics, category-list        |
 | count                       | Limits number of results              | 5              | Number                                           | top-contributors                 |
 | excludedGroupNames          | Excludes specified groups             |            | Group names                                      | top-contributors                 |
-| order                       | Orders the contributors               | likes_received | String (likes_received, likes_given, etc.)       | top-contributors                 |
+| order                       | Orders the contributors               | likes_received | String (likes_received or likes_given)       | top-contributors                 |
 | period                      | Time period for top contributors      | yearly         | all, yearly, quarterly, monthly, weekly, daily   | top-contributors                 |
