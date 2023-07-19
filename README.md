@@ -25,16 +25,19 @@ You can also use other Ember components as blocks, you just need to use the corr
 
 You can control some features for the provided blocks via parameters.
 
-| name                        | description                           | default | value                                            | available for                    |
-| --------------------------- | ------------------------------------- | ------- | ------------------------------------------------ | -------------------------------- |
-| count                       | limits number of results              | varies  | number                                           | all except custom-html           |
-| excerptLimit                | limits length of each reply excerpt   | 150     | number                                           | recent-replies                   |
-| id                          | category id                           |         | category id (category-list uses comma-separated) | category-topics, category-list   |
-| content                     | contents to display                   |         | html                                             | custom-html                      |
-| scopeToCategory             | only shows in category X              |         | category id                                      | popular-tags                     |
-| excludedTags                | list of excluded tags                 |         | tagnames                                         | popular-tags                     |
-| displayInSpecificCategories | list of categories to show the widget | all     | comma-separated numbers                          | popular-tags                     |
-| id                          | leaderboard id                        |         | number                                           | minimal-gamification-leaderboard |
-| tag                         | which tag to display                  |         | tag id                                           | tag-topics                       |
-| period                      | time period of top topics             | weekly  | all, yearly, quarterly, monthly, weekly, daily   | top-topics                       |
-| title                       | title of the block                    | varies  | string                                           | tag-topics, category-list        |
+| name                        | description                           | default        | value                                            | available for                    |
+|-----------------------------|---------------------------------------|----------------| ------------------------------------------------ |----------------------------------|
+| count                       | limits number of results              | varies         | number                                           | all except custom-html           |
+| excerptLimit                | limits length of each reply excerpt   | 150            | number                                           | recent-replies                   |
+| id                          | category id                           |                | category id (category-list uses comma-separated) | category-topics, category-list   |
+| content                     | contents to display                   |                | html                                             | custom-html                      |
+| scopeToCategory             | only shows in category X              |                | category id                                      | popular-tags                     |
+| excludedTags                | list of excluded tags                 |                | tagnames                                         | popular-tags                     |
+| displayInSpecificCategories | list of categories to show the widget | all            | comma-separated numbers                          | popular-tags                     |
+| id                          | leaderboard id                        |                | number                                           | minimal-gamification-leaderboard |
+| tag                         | which tag to display                  |                | tag id                                           | tag-topics                       |
+| period                      | time period of top topics             | weekly         | all, yearly, quarterly, monthly, weekly, daily   | top-topics                       |
+| title                       | title of the block                    | varies         | string                                           | tag-topics, category-list        |
+| excludedGroupNames          | Excludes specified groups             |            | Group names                                      | top-contributors                 |
+| order                       | Orders the contributors               | likes_received | String (likes_received or likes_given)       | top-contributors                 |
+| period                      | Time period for top contributors      | yearly         | all, yearly, quarterly, monthly, weekly, daily   | top-contributors                 |
