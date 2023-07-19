@@ -12,8 +12,8 @@
         {{avatar item.user imageSize="small"}}
         {{html-safe item.user.username}}
       </span>
-      <span class="top-contributors--user-likes">
-        {{#if (this.order "likes_received")}}
+      <span class={{concat "top-contributors--user-likes order--" this.order}}>
+        {{#if (eq this.order "likes_given")}}
           {{d-icon "heart"}}
           {{item.likes_received}}
         {{else}}

@@ -74,6 +74,13 @@ acceptance("Right Sidebar - Top Contributors - Custom count", function (needs) {
   test("Viewing latest", async function (assert) {
     await visit("/");
 
+    assert
+      .dom(".order--likes_given")
+      .isNotVisible("likes_given class is not added");
+    assert
+      .dom(".order--likes_received")
+      .isVisible("likes_received class is added correctly");
+
     assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
     assert.ok(
       visible(".top-contributors--container"),
@@ -140,6 +147,13 @@ acceptance(
 
     test("Viewing latest", async function (assert) {
       await visit("/");
+
+      assert
+        .dom(".order--likes_given")
+        .isVisible("likes_given class is added correctly");
+      assert
+        .dom(".order--likes_received")
+        .isNotVisible("likes_received class is not added");
 
       assert.dom(".tc-right-sidebar").isVisible("sidebar element is present");
       assert
