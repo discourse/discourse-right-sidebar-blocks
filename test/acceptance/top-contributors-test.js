@@ -141,17 +141,14 @@ acceptance(
     test("Viewing latest", async function (assert) {
       await visit("/");
 
-      assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
-      assert.ok(
-        visible(".top-contributors--container"),
-        "top contributors element is present"
-      );
+      assert.dom(".tc-right-sidebar").isVisible("sidebar element is present");
+      assert
+        .dom(".top-contributors--container")
+        .isVisible("top contributors element is present");
 
-      assert.strictEqual(
-        queryAll(".top-contributors--user").length,
-        3,
-        "custom limit is respected"
-      );
+      assert
+        .dom(".top-contributors--user")
+        .exists({ count: 3 }, "custom limit is respected");
 
       assert
         .dom(".top-contributors--view-all")
