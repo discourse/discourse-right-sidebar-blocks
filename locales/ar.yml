@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 ar:
+  subcategory_list:
+    heading: "الفئات الفرعية"
   top_topics:
     heading: "الموضوعات الأكثر نشاطًا"
   category_list:

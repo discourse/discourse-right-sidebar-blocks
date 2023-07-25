@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 fr:
+  subcategory_list:
+    heading: "Sous-catégories"
   top_topics:
     heading: "Meilleurs sujets"
   category_list:

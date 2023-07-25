@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 hr:
+  subcategory_list:
+    heading: "Podkategorije"
   top_topics:
     heading: "Top teme"
   category_list:

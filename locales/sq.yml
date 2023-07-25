@@ -5,5 +5,7 @@
 # https://translate.discourse.org/
 
 sq:
+  subcategory_list:
+    heading: "Nënkategori"
   category_list:
     heading: "Categories"

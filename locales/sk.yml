@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 sk:
+  subcategory_list:
+    heading: "Podkategórie"
   top_topics:
     heading: "Top témy"
   category_list:

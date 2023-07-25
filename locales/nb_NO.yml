@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 nb_NO:
+  subcategory_list:
+    heading: "Underkategorier"
   top_topics:
     heading: "Mest populære emner"
   category_list:

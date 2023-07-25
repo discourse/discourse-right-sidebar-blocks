@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 de:
+  subcategory_list:
+    heading: "Unterkategorien"
   top_topics:
     heading: "Angesagte Themen"
   category_list:

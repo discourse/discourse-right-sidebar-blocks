@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 fi:
+  subcategory_list:
+    heading: "Ala-alueet"
   top_topics:
     heading: "Suositut ketjut"
   category_list:

@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 bg:
+  subcategory_list:
+    heading: "Подкатегории"
   top_topics:
     heading: "Топ теми"
   category_list:

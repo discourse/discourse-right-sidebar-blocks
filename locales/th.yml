@@ -5,5 +5,7 @@
 # https://translate.discourse.org/
 
 th:
+  subcategory_list:
+    heading: "หมวดหมู่ย่อย"
   category_list:
     heading: "หมวดหมู่"

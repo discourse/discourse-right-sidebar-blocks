@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  subcategory_list:
+    heading: "Subcategorias"
   top_topics:
     heading: "Tópicos principais"
   category_list:

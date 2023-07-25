@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 be:
+  subcategory_list:
+    heading: "Падкатэгорыі"
   top_topics:
     heading: "Папулярныя тэмы"
   category_list:

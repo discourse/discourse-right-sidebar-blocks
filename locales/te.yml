@@ -5,5 +5,7 @@
 # https://translate.discourse.org/
 
 te:
+  subcategory_list:
+    heading: "ఉప వర్గాలు"
   category_list:
     heading: "వర్గాలు"

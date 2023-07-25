@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 lt:
+  subcategory_list:
+    heading: "Subkategorijos"
   top_topics:
     heading: "Top temos"
   category_list:

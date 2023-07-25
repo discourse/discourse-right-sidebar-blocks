@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 cs:
+  subcategory_list:
+    heading: "Podkategorie"
   top_topics:
     heading: "Nejlepší témata"
   category_list:

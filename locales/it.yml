@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 it:
+  subcategory_list:
+    heading: "Sottocategorie"
   top_topics:
     heading: "Argomenti di punta"
   category_list:

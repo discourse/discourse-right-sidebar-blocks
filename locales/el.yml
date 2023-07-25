@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 el:
+  subcategory_list:
+    heading: "Υποκατηγορίες"
   top_topics:
     heading: "Κορυφαία νήματα"
   category_list:

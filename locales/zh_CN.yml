@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  subcategory_list:
+    heading: "子类别"
   top_topics:
     heading: "热门话题"
   category_list:

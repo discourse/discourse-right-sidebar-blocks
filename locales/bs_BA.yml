@@ -5,5 +5,7 @@
 # https://translate.discourse.org/
 
 bs_BA:
+  subcategory_list:
+    heading: "Podkategorije"
   category_list:
     heading: "Kategorije"

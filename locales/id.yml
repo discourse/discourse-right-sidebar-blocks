@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 id:
+  subcategory_list:
+    heading: "Subkategori"
   top_topics:
     heading: "Topik unggulan"
   category_list:

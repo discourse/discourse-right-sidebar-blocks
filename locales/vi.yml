@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 vi:
+  subcategory_list:
+    heading: "Phân loại phụ"
   top_topics:
     heading: "Top chủ đề"
   category_list:
