@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 ro:
+  subcategory_list:
+    heading: "Subcategorii"
   top_topics:
     heading: "Subiecte fierbinți"
   category_list:

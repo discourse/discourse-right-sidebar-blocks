@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 sv:
+  subcategory_list:
+    heading: "Underkategorier"
   top_topics:
     heading: "Toppämnen"
   category_list:

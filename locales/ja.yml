@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 ja:
+  subcategory_list:
+    heading: "サブカテゴリ"
   top_topics:
     heading: "人気のトピック"
   category_list:

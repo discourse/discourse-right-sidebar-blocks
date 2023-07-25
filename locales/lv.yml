@@ -5,5 +5,7 @@
 # https://translate.discourse.org/
 
 lv:
+  subcategory_list:
+    heading: "Apakšsadaļas"
   category_list:
     heading: "Sadaļas"

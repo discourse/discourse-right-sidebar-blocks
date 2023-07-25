@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 ca:
+  subcategory_list:
+    heading: "Subcategories"
   top_topics:
     heading: "Temes principals"
   category_list:

@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 hy:
+  subcategory_list:
+    heading: "Ենթակատեգորիաներ"
   top_topics:
     heading: "Թոփ թեմաները"
   category_list:

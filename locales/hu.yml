@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 hu:
+  subcategory_list:
+    heading: "Alkategóriák"
   top_topics:
     heading: "Top témák"
   category_list:

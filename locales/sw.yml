@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 sw:
+  subcategory_list:
+    heading: "Kategoria mtoto"
   top_topics:
     heading: "Mada za juu"
   category_list:

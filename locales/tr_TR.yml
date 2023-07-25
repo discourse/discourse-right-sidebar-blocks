@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 tr_TR:
+  subcategory_list:
+    heading: "Alt kategoriler"
   top_topics:
     heading: "En iyi konular"
   category_list:

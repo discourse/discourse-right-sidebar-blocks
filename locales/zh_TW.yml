@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 zh_TW:
+  subcategory_list:
+    heading: "次分類"
   top_topics:
     heading: "熱門討論話題"
   category_list:

@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 ur:
+  subcategory_list:
+    heading: "ذیلی زمرے"
   top_topics:
     heading: "ٹاپ ٹاپک"
   category_list:

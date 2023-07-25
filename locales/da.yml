@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 da:
+  subcategory_list:
+    heading: "Underkategorier:"
   top_topics:
     heading: "Populære emner"
   category_list:

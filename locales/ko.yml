@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 ko:
+  subcategory_list:
+    heading: "하위 카테고리"
   top_topics:
     heading: "주요 글"
   category_list:

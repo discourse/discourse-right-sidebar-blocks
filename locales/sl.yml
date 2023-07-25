@@ -5,5 +5,7 @@
 # https://translate.discourse.org/
 
 sl:
+  subcategory_list:
+    heading: "Pod Kategorija"
   category_list:
     heading: "Kategorije"

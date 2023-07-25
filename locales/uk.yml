@@ -5,6 +5,8 @@
 # https://translate.discourse.org/
 
 uk:
+  subcategory_list:
+    heading: "Підрозділи"
   top_topics:
     heading: "Кращі теми"
   category_list:
