@@ -36,6 +36,10 @@ export default class PopularTags extends Component {
     }
   }
 
+  get viewAllUrl() {
+    return `/tags`;
+  }
+
   shouldDisplay(categoryId) {
     const displayInSpecificCategories =
       this.args?.params?.displayInSpecificCategories?.split(",").map(Number);

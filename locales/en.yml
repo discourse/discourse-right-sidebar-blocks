@@ -4,6 +4,7 @@ en:
     view_all: "View all"
   popular_tags:
     heading: "Popular tags"
+    view_all: "View all"
   recent_replies:
     heading: "Recent replies"
   subcategory_list:
