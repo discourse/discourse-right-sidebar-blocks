@@ -3,15 +3,15 @@
     {{theme-i18n "popular_tags.heading"}}
   </h3>
 
-  <div class="popular-tags--container">
+  <div class="popular-tags__container">
     {{#each topTags as |t|}}
-      <a href="/tag/{{t}}" class="popular-tags--tag">
+      <a href="/tag/{{t}}" class="popular-tags__tag">
         {{t}}
       </a>
     {{/each}}
   </div>
 
-  <a class="popular-tags--view-all" href={{this.viewAllUrl}}>
+  <a class="popular-tags__view-all" href={{this.viewAllUrl}}>
     {{theme-i18n "popular_tags.view_all"}}
   </a>
 {{/if}}
