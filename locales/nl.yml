@@ -10,6 +10,7 @@ nl:
     view_all: "Alles weergeven"
   popular_tags:
     heading: "Populaire tags"
+    view_all: "Alles weergeven"
   recent_replies:
     heading: "Recente antwoorden"
   subcategory_list:

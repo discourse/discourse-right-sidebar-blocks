@@ -10,6 +10,7 @@ fa_IR:
     view_all: "مشاهده همه"
   popular_tags:
     heading: "برچسب‌های محبوب"
+    view_all: "مشاهده همه"
   recent_replies:
     heading: "پاسخ‌های اخیر"
   subcategory_list:
