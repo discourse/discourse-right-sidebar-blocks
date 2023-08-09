@@ -1,3 +1,5 @@
+<PluginOutlet @name="above-right-sidebar-blocks" />
+
 {{#each blocks as |block|}}
   <div class={{block.classNames}}>
     {{component block.name params=block.parsedParams}}
@@ -7,3 +9,5 @@
     @outletArgs={{hash block=block}}
   />
 {{/each}}
+
+<PluginOutlet @name="below-right-sidebar-blocks" />
