@@ -7,6 +7,7 @@ export default class TopContributors extends Component {
   order = this.args.params?.order || "likes_received";
   period = this.args.params?.period || "yearly";
   count = this.args.params?.count || 5;
+  excludedGroupNames = this.args.params?.excludedGroupNames || "";
 
   constructor() {
     super(...arguments);
@@ -17,12 +18,11 @@ export default class TopContributors extends Component {
   }
 
   get requestURL() {
-    const excludedGroupNames = this.args.params?.excludedGroupNames || "";
-    return `/directory_items.json?period=${this.period}&order=${this.order}&exclude_groups=${excludedGroupNames}&limit=${this.count}`;
+    return `/directory_items.json?period=${this.period}&order=${this.order}&exclude_groups=${this.excludedGroupNames}&limit=${this.count}`;
   }
 
   get viewAllUrl() {
-    return `/u?order=${this.order}&period=${this.period}`;
+    return `/u?order=${this.order}&period=${this.period}&exclude_groups=${this.excludedGroupNames}`;
   }
 
   willDestroy() {
