@@ -166,7 +166,7 @@ acceptance(
 
       assert
         .dom(".top-contributors--view-all")
-        .hasAttribute("href", "/u?order=likes_given&period=weekly");
+        .hasAttribute("href", "/u?order=likes_given&period=weekly&exclude_groups=Team|contributors");
     });
   }
 );
