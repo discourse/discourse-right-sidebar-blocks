@@ -5,6 +5,14 @@
 # https://translate.discourse.org/
 
 de:
+  top_contributors:
+    heading: "Top-Mitwirkende"
+    view_all: "Alle ansehen"
+  popular_tags:
+    heading: "Beliebte Schlagwörter"
+    view_all: "Alle ansehen"
+  recent_replies:
+    heading: "Aktuelle Antworten"
   subcategory_list:
     heading: "Unterkategorien"
   top_topics:
