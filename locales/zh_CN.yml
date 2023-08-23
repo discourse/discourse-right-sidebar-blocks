@@ -5,6 +5,14 @@
 # https://translate.discourse.org/
 
 zh_CN:
+  top_contributors:
+    heading: "排名靠前的贡献者"
+    view_all: "查看全部"
+  popular_tags:
+    heading: "热门标签"
+    view_all: "查看全部"
+  recent_replies:
+    heading: "最近回复"
   subcategory_list:
     heading: "子类别"
   top_topics:
