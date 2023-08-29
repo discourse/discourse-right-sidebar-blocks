@@ -5,6 +5,14 @@
 # https://translate.discourse.org/
 
 ar:
+  top_contributors:
+    heading: "أبرز المساهمين"
+    view_all: "عرض الكل"
+  popular_tags:
+    heading: "الوسوم الشائعة"
+    view_all: "عرض الكل"
+  recent_replies:
+    heading: "الردود الحديثة"
   subcategory_list:
     heading: "الفئات الفرعية"
   top_topics:
