@@ -5,9 +5,17 @@
 # https://translate.discourse.org/
 
 tr_TR:
+  top_contributors:
+    heading: "En çok katkıda bulunanlar"
+    view_all: "Tümünü görüntüle"
+  popular_tags:
+    heading: "Popüler etiketler"
+    view_all: "Tümünü görüntüle"
+  recent_replies:
+    heading: "Son yanıtlar"
   subcategory_list:
     heading: "Alt kategoriler"
   top_topics:
-    heading: "En iyi konular"
+    heading: "En popüler konular"
   category_list:
     heading: "Kategoriler"

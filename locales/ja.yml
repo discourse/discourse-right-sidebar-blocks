@@ -5,9 +5,17 @@
 # https://translate.discourse.org/
 
 ja:
+  top_contributors:
+    heading: "上位貢献者"
+    view_all: "すべて表示"
+  popular_tags:
+    heading: "人気のタグ"
+    view_all: "すべて表示"
+  recent_replies:
+    heading: "最近の返信"
   subcategory_list:
     heading: "サブカテゴリ"
   top_topics:
-    heading: "人気のトピック"
+    heading: "上位トピック"
   category_list:
     heading: "カテゴリ"

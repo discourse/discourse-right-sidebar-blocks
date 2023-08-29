@@ -5,6 +5,14 @@
 # https://translate.discourse.org/
 
 ru:
+  top_contributors:
+    heading: "Топ участников"
+    view_all: "Показать всех"
+  popular_tags:
+    heading: "Популярные теги"
+    view_all: "Показать все"
+  recent_replies:
+    heading: "Недавние ответы"
   subcategory_list:
     heading: "Подкатегории"
   top_topics:
