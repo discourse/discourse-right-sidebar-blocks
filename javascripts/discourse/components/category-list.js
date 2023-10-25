@@ -6,7 +6,7 @@ export default class CategoryList extends Component {
   constructor() {
     super(...arguments);
     this.blockTitle =
-      this.args?.params?.title || I18n.t(themePrefix("top_contributors.heading"));
+      this.args?.params?.title || I18n.t(themePrefix("category_list.heading"));
 
     this.categoryList = this.args?.params?.id.split(",");
     if (!this.categoryList) {
