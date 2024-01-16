@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 en_GB:
+  category_list:
+    heading: "Categories"
