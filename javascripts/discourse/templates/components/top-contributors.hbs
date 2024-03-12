@@ -10,7 +10,7 @@
         class="top-contributors--user-badge"
       >
         {{avatar item.user imageSize="small"}}
-        {{#if item.user.name}}
+        {{#if (and item.user.name siteSettings.enable_names)}}
           {{html-safe item.user.name}}
         {{else}}
           {{html-safe item.user.username}}
