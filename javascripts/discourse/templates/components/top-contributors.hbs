@@ -10,10 +10,10 @@
         class="top-contributors--user-badge"
       >
         {{avatar item.user imageSize="small"}}
-        {{#if (and item.user.name siteSettings.enable_names)}}
-          {{html-safe item.user.name}}
+        {{#if (and item.user.name siteSettings.prioritize_username_in_ux)}}
+          {{item.user.name}}
         {{else}}
-          {{html-safe item.user.username}}
+          {{item.user.username}}
         {{/if}}
       </span>
       <span class={{concat "top-contributors--user-likes order--" this.order}}>
