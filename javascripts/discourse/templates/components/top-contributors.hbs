@@ -10,7 +10,11 @@
         class="top-contributors--user-badge"
       >
         {{avatar item.user imageSize="small"}}
-        {{html-safe item.user.username}}
+        {{#if item.user.name}}
+          {{html-safe item.user.name}}
+        {{else}}
+          {{html-safe item.user.username}}
+        {{/if}}
       </span>
       <span class={{concat "top-contributors--user-likes order--" this.order}}>
         {{#if (eq this.order "likes_received")}}
