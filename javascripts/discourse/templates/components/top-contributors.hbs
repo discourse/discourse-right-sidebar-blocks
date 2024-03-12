@@ -10,7 +10,9 @@
         class="top-contributors--user-badge"
       >
         {{avatar item.user imageSize="small"}}
-        {{#if (and item.user.name siteSettings.prioritize_username_in_ux)}}
+        {{#if siteSettings.prioritize_username_in_ux}}
+          {{item.user.username}}
+        {{else if item.user.name}}
           {{item.user.name}}
         {{else}}
           {{item.user.username}}
@@ -29,9 +31,6 @@
   {{/each}}
 </div>
 
-<a
-  class="top-contributors--view-all"
-  href={{this.viewAllUrl}}
->
+<a class="top-contributors--view-all" href={{this.viewAllUrl}}>
   {{theme-i18n "top_contributors.view_all"}}
 </a>
