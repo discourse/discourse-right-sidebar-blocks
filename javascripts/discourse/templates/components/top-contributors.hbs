@@ -10,7 +10,13 @@
         class="top-contributors--user-badge"
       >
         {{avatar item.user imageSize="small"}}
-        {{html-safe item.user.username}}
+        {{#if siteSettings.prioritize_username_in_ux}}
+          {{item.user.username}}
+        {{else if item.user.name}}
+          {{item.user.name}}
+        {{else}}
+          {{item.user.username}}
+        {{/if}}
       </span>
       <span class={{concat "top-contributors--user-likes order--" this.order}}>
         {{#if (eq this.order "likes_received")}}
@@ -25,9 +31,6 @@
   {{/each}}
 </div>
 
-<a
-  class="top-contributors--view-all"
-  href={{this.viewAllUrl}}
->
+<a class="top-contributors--view-all" href={{this.viewAllUrl}}>
   {{theme-i18n "top_contributors.view_all"}}
 </a>
