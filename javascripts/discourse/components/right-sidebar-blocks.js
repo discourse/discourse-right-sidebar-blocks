@@ -2,7 +2,8 @@ import Component from "@glimmer/component";
 import { getOwner } from "@ember/application";
 import { tracked } from "@glimmer/tracking";
 
-const internalComponentAlias = {
+const componentNameOverrides = {
+  // avoids name collision with core's custom-html component
   "custom-html": "custom-html-rsb",
 };
 
@@ -16,8 +17,8 @@ export default class RightSidebarBlocks extends Component {
 
     JSON.parse(settings.blocks).forEach((block) => {
       block.internalName =
-        block.name in internalComponentAlias
-          ? internalComponentAlias[block.name]
+        block.name in componentNameOverrides
+          ? componentNameOverrides[block.name]
           : block.name;
 
       if (getOwner(this).hasRegistration(`component:${block.internalName}`)) {
