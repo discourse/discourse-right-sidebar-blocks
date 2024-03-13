@@ -2,7 +2,7 @@
 
 {{#each blocks as |block|}}
   <div class={{block.classNames}}>
-    {{component block.name params=block.parsedParams}}
+    {{component block.internalName params=block.parsedParams}}
   </div>
   <PluginOutlet
     @name="below-right-sidebar-block"
