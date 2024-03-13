@@ -37,7 +37,7 @@ You can control some features for the provided blocks via parameters.
 | id                          | leaderboard id                        |                | number                                           | minimal-gamification-leaderboard |
 | tag                         | which tag to display                  |                | tag id                                           | tag-topics                       |
 | period                      | time period of top topics             | weekly         | all, yearly, quarterly, monthly, weekly, daily   | top-topics                       |
-| title                       | title of the block                    | varies         | string                                           | tag-topics, category-list        |
+| title                       | title of the block                    | varies         | string                                           | tag-topics, category-list, top-contributors  |
 | excludedGroupNames          | Excludes specified groups             |            | Group names                                      | top-contributors                 |
 | order                       | Orders the contributors               | likes_received | String (likes_received or likes_given)       | top-contributors                 |
 | period                      | Time period for top contributors      | yearly         | all, yearly, quarterly, monthly, weekly, daily   | top-contributors                 |
