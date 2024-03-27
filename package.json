@@ -1,10 +1,9 @@
 {
-  "name": "discourse-right-sidebar-blocks",
-  "version": "0.0.1",
-  "repository": "https://github.com/discourse/discourse-right-sidebar-blocks",
-  "author": "Discourse",
-  "license": "MIT",
+  "private": true,
   "devDependencies": {
-    "eslint-config-discourse": "^3.1.0"
+    "@discourse/lint-configs": "^1.3.7",
+    "ember-template-lint": "^5.13.0",
+    "eslint": "^8.56.0",
+    "prettier": "^2.8.8"
   }
 }

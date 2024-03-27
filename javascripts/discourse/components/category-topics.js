@@ -1,8 +1,8 @@
-import Category from "discourse/models/category";
-import getURL from "discourse-common/lib/get-url";
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
+import Category from "discourse/models/category";
+import getURL from "discourse-common/lib/get-url";
 
 export default class CategoryTopics extends Component {
   @service store;
@@ -37,6 +37,7 @@ export default class CategoryTopics extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.topics = null;
   }
 }

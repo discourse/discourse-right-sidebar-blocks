@@ -1,7 +1,7 @@
-import Category from "discourse/models/category";
 import Component from "@glimmer/component";
-import { ajax } from "discourse/lib/ajax";
 import { tracked } from "@glimmer/tracking";
+import { ajax } from "discourse/lib/ajax";
+import Category from "discourse/models/category";
 
 export default class TopTopics extends Component {
   @tracked topTopics = null;
@@ -23,6 +23,7 @@ export default class TopTopics extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.topTopics = null;
   }
 }

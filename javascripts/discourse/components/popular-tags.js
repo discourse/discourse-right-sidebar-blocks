@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 
 export default class PopularTags extends Component {
   @service site;
@@ -51,6 +51,7 @@ export default class PopularTags extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.topTags = null;
   }
 }

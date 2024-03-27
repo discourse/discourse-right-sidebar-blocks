@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
-import { ajax } from "discourse/lib/ajax";
 import { tracked } from "@glimmer/tracking";
+import { ajax } from "discourse/lib/ajax";
 
 export default class TopContributors extends Component {
   @tracked topContributors = null;
@@ -26,6 +26,7 @@ export default class TopContributors extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.topContributors = null;
   }
 }

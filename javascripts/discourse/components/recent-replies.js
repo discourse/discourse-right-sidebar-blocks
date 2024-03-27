@@ -1,6 +1,6 @@
 import Component from "@glimmer/component";
-import { ajax } from "discourse/lib/ajax";
 import { tracked } from "@glimmer/tracking";
+import { ajax } from "discourse/lib/ajax";
 
 function stripHtml(html) {
   let doc = new DOMParser().parseFromString(html, "text/html");
@@ -38,6 +38,7 @@ export default class RecentReplies extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.replies = null;
   }
 }
