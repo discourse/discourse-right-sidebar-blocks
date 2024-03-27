@@ -1,11 +1,11 @@
+import { visit } from "@ember/test-helpers";
+import { test } from "qunit";
+import DirectoryFixtures from "discourse/tests/fixtures/directory-fixtures";
 import {
   acceptance,
   queryAll,
   visible,
 } from "discourse/tests/helpers/qunit-helpers";
-import { visit } from "@ember/test-helpers";
-import { test } from "qunit";
-import DirectoryFixtures from "discourse/tests/fixtures/directory-fixtures";
 
 acceptance("Right Sidebar - Top Contributors", function (needs) {
   const blocksJSON = [

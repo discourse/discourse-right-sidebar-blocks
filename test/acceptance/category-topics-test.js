@@ -1,7 +1,7 @@
-import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import discoveryFixture from "discourse/tests/fixtures/discovery-fixtures";
+import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
 import { cloneJSON } from "discourse-common/lib/object";
 
 acceptance("Right Sidebar - Category Topics", function (needs) {

@@ -1,7 +1,7 @@
-import Category from "discourse/models/category";
 import Component from "@glimmer/component";
-import { ajax } from "discourse/lib/ajax";
 import { tracked } from "@glimmer/tracking";
+import { ajax } from "discourse/lib/ajax";
+import Category from "discourse/models/category";
 
 export default class TagTopics extends Component {
   @tracked tagTopics = null;
@@ -24,6 +24,7 @@ export default class TagTopics extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     this.tagTopics = null;
   }
 }

@@ -1,5 +1,5 @@
-import Category from "discourse/models/category";
 import Component from "@glimmer/component";
+import Category from "discourse/models/category";
 import I18n from "I18n";
 
 export default class CategoryList extends Component {

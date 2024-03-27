@@ -1,6 +1,6 @@
-import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar - Top Contributors", function (needs) {
   const blocksJSON = [
