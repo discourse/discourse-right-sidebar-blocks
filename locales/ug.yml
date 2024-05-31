@@ -4,10 +4,10 @@
 # To work with us on translations, join this project:
 # https://translate.discourse.org/
 
-te:
+ug:
   subcategory_list:
-    heading: "ఉప వర్గాలు"
+    heading: "تارماق سەھىپە"
   top_topics:
-    heading: "అగ్ర విషయాలు"
+    heading: "قىزغىن تېما"
   category_list:
-    heading: "వర్గాలు"
+    heading: "سەھىپە"
