@@ -1,9 +1,9 @@
 {
-  "name": "discourse-right-sidebar-blocks",
+  "name": "Right Sidebar Blocks",
   "component": true,
   "authors": "Discourse",
-  "license_url": "TODO",
-  "about_url": "TODO",
+  "license_url": "https://github.com/discourse/discourse-right-sidebar-blocks/blob/main/LICENSE",
+  "about_url": "https://meta.discourse.org/t/right-sidebar-blocks/231067",
   "learn_more": "TODO",
   "theme_version": "0.0.1",
   "minimum_discourse_version": null,
