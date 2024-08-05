@@ -81,6 +81,14 @@ acceptance("Right Sidebar - custom routes", function (needs) {
     );
   });
 
+  test("Viewing the urgent bug subcategory", async function (assert) {
+    await visit("/c/bug/urgent");
+    assert.ok(
+      visible(".tc-right-sidebar"),
+      "sidebar present under the urgent bug subcategory"
+    );
+  });
+
   test("Viewing the important tag", async function (assert) {
     await visit("/tag/important");
 
