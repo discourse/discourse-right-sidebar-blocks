@@ -30,7 +30,7 @@ export default {
             !this.category.has_children &&
             !!this.category.parent_category_id) {
             subcategory = categorySlug;
-            parentCategory = category.ancestors[0].slug
+            parentCategory = category.ancestors[0].slug;
           }
 
           if (

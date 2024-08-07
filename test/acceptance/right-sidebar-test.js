@@ -26,7 +26,7 @@ acceptance("Right Sidebar - custom routes", function (needs) {
 
   needs.hooks.beforeEach(() => {
     settings.show_in_routes =
-      "discovery.categories|discovery.top|c/bug|tag/important";
+      "discovery.categories|discovery.top|c/bug|c/bar/foo|tag/important";
   });
 
   needs.hooks.afterEach(() => {
@@ -81,11 +81,11 @@ acceptance("Right Sidebar - custom routes", function (needs) {
     );
   });
 
-  test("Viewing the urgent bug subcategory", async function (assert) {
-    await visit("/c/bug/urgent");
+  test("Viewing the foo subcategory", async function (assert) {
+    await visit("/c/bar/foo");
     assert.ok(
       visible(".tc-right-sidebar"),
-      "sidebar present under the urgent bug subcategory"
+      "sidebar present under the foo bug subcategory"
     );
   });
 
