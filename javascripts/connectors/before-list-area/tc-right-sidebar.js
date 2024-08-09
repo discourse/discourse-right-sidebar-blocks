@@ -26,9 +26,11 @@ export default {
           // -- is category
           // -- does not have children itself
           // -- has a parent category
-          if (!!this.category &&
+          if (
+            !!this.category &&
             !this.category.has_children &&
-            !!this.category.parent_category_id) {
+            !!this.category.parent_category_id
+          ) {
             subcategory = categorySlug;
             parentCategory = category.ancestors[0].slug;
           }
@@ -47,7 +49,7 @@ export default {
 
         // if theme setting is empty, show everywhere except /categories
         return currentRouteName === "discovery.categories" ? false : true;
-      }
+      },
     });
   },
 };
