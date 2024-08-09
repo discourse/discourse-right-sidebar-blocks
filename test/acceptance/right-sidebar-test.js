@@ -57,7 +57,6 @@ acceptance("Right Sidebar - custom routes", function (needs) {
     });
 
     server.get(`/c/bug/foo/2/l/latest.json`, () => {
-      console.log("PRETENDER IS WORKING")
       return helper.response(
         cloneJSON(discoveryFixture["/c/bug/1/l/latest.json"])
       );
