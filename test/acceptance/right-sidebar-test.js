@@ -26,15 +26,37 @@ acceptance("Right Sidebar - custom routes", function (needs) {
 
   needs.hooks.beforeEach(() => {
     settings.show_in_routes =
-      "discovery.categories|discovery.top|c/bug|tag/important";
+      "discovery.categories|discovery.top|c/bug|c/bug/foo|tag/important";
   });
 
   needs.hooks.afterEach(() => {
     settings.blocks = "[]";
   });
 
+  needs.site({
+    categories: [
+      {
+        id: 1,
+        name: "bug",
+        slug: "bug",
+      },
+      {
+        id: 2,
+        name: "foo",
+        slug: "foo",
+        parent_category_id: 1,
+      },
+    ],
+  });
+
   needs.pretender((server, helper) => {
     server.get(`/c/bug/1/l/latest.json`, () => {
+      return helper.response(
+        cloneJSON(discoveryFixture["/c/bug/1/l/latest.json"])
+      );
+    });
+
+    server.get(`/c/bug/foo/2/l/latest.json`, () => {
       return helper.response(
         cloneJSON(discoveryFixture["/c/bug/1/l/latest.json"])
       );
@@ -78,6 +100,15 @@ acceptance("Right Sidebar - custom routes", function (needs) {
     assert.ok(
       visible(".tc-right-sidebar"),
       "sidebar present under the bug category"
+    );
+  });
+
+  test("Viewing the foo subcategory", async function (assert) {
+    await visit("/c/bug/foo/2");
+
+    assert.ok(
+      visible(".tc-right-sidebar"),
+      "sidebar present under the foo subcategory"
     );
   });
 

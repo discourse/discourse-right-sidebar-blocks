@@ -5,7 +5,7 @@
   "license_url": "https://github.com/discourse/discourse-right-sidebar-blocks/blob/main/LICENSE",
   "about_url": "https://meta.discourse.org/t/right-sidebar-blocks/231067",
   "learn_more": "TODO",
-  "theme_version": "0.0.1",
+  "theme_version": "0.0.2",
   "minimum_discourse_version": null,
   "maximum_discourse_version": null,
   "assets": {},

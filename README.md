@@ -41,3 +41,7 @@ You can control some features for the provided blocks via parameters.
 | excludedGroupNames          | Excludes specified groups             |            | Group names                                      | top-contributors                 |
 | order                       | Orders the contributors               | likes_received | String (likes_received or likes_given)       | top-contributors                 |
 | period                      | Time period for top contributors      | yearly         | all, yearly, quarterly, monthly, weekly, daily   | top-contributors                 |
+
+### Blocks from other plugins
+
+The Discourse Calendar plugin comes with a block called `upcoming-events-list` that you can use in conjunction with this component. You'll want to ensure the desired route is enabled via the `events calendar categories` setting in the Calendar plugin settings. The block params use this [syntax](https://momentjs.com/docs/#/displaying/format/), for example `MMMM D, YYYY`.
