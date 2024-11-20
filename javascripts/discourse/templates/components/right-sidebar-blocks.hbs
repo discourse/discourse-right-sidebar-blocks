@@ -1,6 +1,6 @@
 <PluginOutlet @name="above-right-sidebar-blocks" />
 
-{{#each blocks as |block|}}
+{{#each this.blocks as |block|}}
   <div class={{block.classNames}}>
     {{component block.internalName params=block.parsedParams}}
   </div>

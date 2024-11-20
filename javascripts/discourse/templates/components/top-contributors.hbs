@@ -3,14 +3,14 @@
 </h3>
 
 <div class="top-contributors--container">
-  {{#each topContributors as |item|}}
+  {{#each this.topContributors as |item|}}
     <div class="top-contributors--user">
       <span
         data-user-card={{item.user.username}}
         class="top-contributors--user-badge"
       >
         {{avatar item.user imageSize="small"}}
-        {{#if siteSettings.prioritize_username_in_ux}}
+        {{#if this.siteSettings.prioritize_username_in_ux}}
           {{item.user.username}}
         {{else if item.user.name}}
           {{item.user.name}}

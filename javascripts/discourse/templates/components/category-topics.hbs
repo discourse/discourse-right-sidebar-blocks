@@ -1,7 +1,7 @@
-{{category-link category}}
+{{category-link this.category}}
 
 <div class="category-topics--content">
-  {{#each topics as |topic|}}
+  {{#each this.topics as |topic|}}
     <a href={{topic.url}} class="category-topics--topic">
       {{html-safe (replace-emoji topic.fancy_title)}}
       <span class="category-topics--posts-count">

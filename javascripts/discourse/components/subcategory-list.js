@@ -6,6 +6,11 @@ export default class SubcategoryList extends Component {
   @service router;
   @tracked parentCategory = null;
 
+  willDestroy() {
+    super.willDestroy(...arguments);
+    this.parentCategory = null;
+  }
+
   get shouldShowBlock() {
     const currentRoute = this.router.currentRoute;
 
@@ -32,10 +37,5 @@ export default class SubcategoryList extends Component {
       displayInCategories === undefined ||
       displayInCategories.includes(parentCategoryId)
     );
-  }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.parentCategory = null;
   }
 }

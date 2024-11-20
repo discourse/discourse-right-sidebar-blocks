@@ -1,10 +1,10 @@
-{{#if shouldShowBlock}}
+{{#if this.shouldShowBlock}}
   <h3 class="popular-tags-heading">
     {{theme-i18n "popular_tags.heading"}}
   </h3>
 
   <div class="popular-tags__container">
-    {{#each topTags as |t|}}
+    {{#each this.topTags as |t|}}
       <a href="/tag/{{t}}" class="popular-tags__tag">
         {{t}}
       </a>
