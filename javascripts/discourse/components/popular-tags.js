@@ -7,6 +7,11 @@ export default class PopularTags extends Component {
   @service router;
   @tracked topTags = null;
 
+  willDestroy() {
+    super.willDestroy(...arguments);
+    this.topTags = null;
+  }
+
   get shouldShowBlock() {
     const currentRoute = this.router.currentRoute;
     const count = this.args?.params?.count || 10;
@@ -48,10 +53,5 @@ export default class PopularTags extends Component {
       displayInSpecificCategories === undefined ||
       displayInSpecificCategories.includes(categoryId)
     );
-  }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.topTags = null;
   }
 }

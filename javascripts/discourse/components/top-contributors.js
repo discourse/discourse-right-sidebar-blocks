@@ -17,16 +17,16 @@ export default class TopContributors extends Component {
     });
   }
 
+  willDestroy() {
+    super.willDestroy(...arguments);
+    this.topContributors = null;
+  }
+
   get requestURL() {
     return `/directory_items.json?period=${this.period}&order=${this.order}&exclude_groups=${this.excludedGroupNames}&limit=${this.count}`;
   }
 
   get viewAllUrl() {
     return `/u?order=${this.order}&period=${this.period}&exclude_groups=${this.excludedGroupNames}`;
-  }
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.topContributors = null;
   }
 }

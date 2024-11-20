@@ -1,9 +1,9 @@
 <h3 class="category-list__heading">
-  {{blockTitle}}
+  {{this.blockTitle}}
 </h3>
 
 <div class="category-list__container">
-  {{#each categoryList as |category|}}
+  {{#each this.categoryList as |category|}}
     <div class="category-list__category">
       {{category-link category}}
     </div>
