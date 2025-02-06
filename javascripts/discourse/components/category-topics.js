@@ -1,8 +1,8 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
+import getURL from "discourse/lib/get-url";
 import Category from "discourse/models/category";
-import getURL from "discourse-common/lib/get-url";
 
 export default class CategoryTopics extends Component {
   @service store;
