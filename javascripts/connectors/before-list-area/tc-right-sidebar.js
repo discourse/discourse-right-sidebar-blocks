@@ -1,5 +1,5 @@
 import { service } from "@ember/service";
-import discourseComputed from "discourse-common/utils/decorators";
+import discourseComputed from "discourse/lib/decorators";
 
 export default {
   setupComponent() {
