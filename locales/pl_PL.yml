@@ -5,17 +5,19 @@
 # https://translate.discourse.org/
 
 pl_PL:
-top_contributors:
-heading: "Najaktywniejsi współtwórcy"
-view_all: "Zobacz wszystkich"
-popular_tags:
-heading: "Popularne tagi"
-view_all: "Zobacz wszystkie"
-recent_replies:
-heading: "Ostatnie odpowiedzi"
-subcategory_list:
-heading: "Podkategorie"
-top_topics:
-heading: "Najpopularniejsze tematy"
-category_list:
-heading: "Kategorie"
+pl:
+  top_contributors:
+    heading: "Najlepsi współtwórcy"
+    view_all: "Zobacz wszystkich"
+  popular_tags:
+    heading: "Popularne tagi"
+    view_all: "Zobacz wszystkie"
+  recent_replies:
+    heading: "Ostatnie odpowiedzi"
+  subcategory_list:
+    heading: "Podkategorie"
+  top_topics:
+    heading: "Najpopularniejsze tematy"
+  category_list:
+    heading: "Kategorie"
+
