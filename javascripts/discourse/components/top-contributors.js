@@ -1,6 +1,7 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { ajax } from "discourse/lib/ajax";
+import { i18n } from "discourse-i18n";
 
 export default class TopContributors extends Component {
   @tracked topContributors = null;
@@ -11,6 +12,8 @@ export default class TopContributors extends Component {
 
   constructor() {
     super(...arguments);
+    this.blockTitle =
+      this.args?.params?.title || i18n(themePrefix("top_contributors.heading"));
 
     ajax(this.requestURL).then((data) => {
       this.topContributors = data.directory_items?.slice(0, this.count);
