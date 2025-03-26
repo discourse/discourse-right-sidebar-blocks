@@ -12,5 +12,8 @@
     "yarn": "please-use-pnpm",
     "pnpm": "9.x"
   },
-  "packageManager": "pnpm@9.15.5"
+  "packageManager": "pnpm@9.15.5",
+  "dependencies": {
+    "stylelint": "^16.17.0"
+  }
 }

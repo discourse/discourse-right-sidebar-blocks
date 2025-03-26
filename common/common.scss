@@ -37,17 +37,18 @@ span.category-topics--posts-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: $header-background;
-  color: white;
-  min-width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  font-size: 12px;
+  background: $header-background;
+  color: $secondary;
+  line-height: var(--line-height-large);
+  font-size: $font-down-1;
   text-align: center;
+  font-weight: normal;
+  white-space: nowrap;
+  border-radius: 50%;
 }
 
 span.category-topics--posts-count:not(:empty) {
-  padding: 0 0px;
+  padding: 0 8px;
 }
 span.category-topics--posts-count:empty {
   padding: 0;
