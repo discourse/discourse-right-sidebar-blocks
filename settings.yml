@@ -36,3 +36,15 @@ show_in_routes:
   description: "Advanced users only: limit sidebar to the selected routes. <br/><br/>Examples: discovery.latest, discovery.unread, discovery.new, discovery.top, tag.show, \"c/category-slug\" (for categories), \"tag/sample-tag\" (for tags). <br/><br/>When empty, the sidebar is shown on all list routes."
   allow_any: true
   choices:
+sidebar_image:
+  default: ""
+  description: "The image to display in the sidebar"
+  type: "upload"
+sidebar_heading_font_size:
+  default: 1.2
+  description: "The font size of the sidebar heading (in ems)"
+  type: "float"
+sidebar_heading_font_weight:
+  default: "700"
+  description: "The font weight of the sidebar heading"
+  type: "string"

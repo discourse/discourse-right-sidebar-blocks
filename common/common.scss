@@ -1,0 +1,54 @@
+// Theme's SCSS
+.rs-component {
+  border: 5px solid $header-background;
+  padding: 10px; /* Adds space inside the border */
+  margin: 10px; /* Adds space between components */
+  color: $header-background;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+
+  a {
+    color: $header-background;
+  }
+
+  .badge-category::before {
+    content: "";
+    display: none;
+  }
+  .badge-category__wrapper {
+    // make bigger and bold
+    font-size: #{$sidebar_heading_font_size}em;
+    font-weight: #{$sidebar_heading_font_weight};
+  }
+  .not-sidebar-image {
+    max-height: 300px;
+    max-width: 100%;
+  }
+  .sidebar-image img {
+    width: 100%; /* Makes the image fill the container's width */
+    height: 100%; /* Makes the image fill the container's height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+  }
+  a.category-topics--topic[href^="/t/about-the"] {
+    display: none;
+  }
+}
+
+span.category-topics--posts-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $header-background;
+  color: white;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+}
+
+span.category-topics--posts-count:not(:empty) {
+  padding: 0 0px;
+}
+span.category-topics--posts-count:empty {
+  padding: 0;
+}
