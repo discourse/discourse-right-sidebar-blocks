@@ -4,6 +4,7 @@ import { service } from "@ember/service";
 
 export default class SubcategoryList extends Component {
   @service router;
+
   @tracked parentCategory = null;
 
   willDestroy() {
