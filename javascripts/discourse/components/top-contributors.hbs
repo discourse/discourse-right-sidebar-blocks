@@ -20,11 +20,11 @@
       </span>
       <span class={{concat "top-contributors--user-likes order--" this.order}}>
         {{#if (eq this.order "likes_received")}}
-          {{d-icon "heart"}}
           {{item.likes_received}}
-        {{else}}
           {{d-icon "heart"}}
+        {{else}}
           {{item.likes_given}}
+          {{d-icon "heart"}}
         {{/if}}
       </span>
     </div>
