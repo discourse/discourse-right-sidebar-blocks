@@ -12,11 +12,11 @@ acceptance("Right Sidebar - Category Topics", function (needs) {
     },
   ];
 
-  needs.hooks.beforeEach(() => {
+  needs.hooks.beforeEach(function () {
     settings.blocks = JSON.stringify(blocksJSON);
   });
 
-  needs.hooks.afterEach(() => {
+  needs.hooks.afterEach(function () {
     settings.blocks = "[]";
   });
 

@@ -8,11 +8,11 @@ acceptance("Right Sidebar - Subcategory List", function (needs) {
       name: "subcategory-list",
     },
   ];
-  needs.hooks.beforeEach(() => {
+  needs.hooks.beforeEach(function () {
     settings.blocks = JSON.stringify(blocksJSON);
   });
 
-  needs.hooks.afterEach(() => {
+  needs.hooks.afterEach(function () {
     settings.blocks = "[]";
   });
 

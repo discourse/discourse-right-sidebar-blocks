@@ -22,12 +22,12 @@ acceptance("Right Sidebar", function () {
 acceptance("Right Sidebar - custom routes", function (needs) {
   needs.settings({ tagging_enabled: true });
 
-  needs.hooks.beforeEach(() => {
+  needs.hooks.beforeEach(function () {
     settings.show_in_routes =
       "discovery.categories|discovery.top|c/bug|c/bug/foo|tag/important";
   });
 
-  needs.hooks.afterEach(() => {
+  needs.hooks.afterEach(function () {
     settings.blocks = "[]";
   });
 
