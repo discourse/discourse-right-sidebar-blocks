@@ -49,6 +49,7 @@
 .top-contributors--user-likes {
   grid-area: right;
   justify-self: end;
+  white-space: nowrap;
 }
 
 // Recent replies
