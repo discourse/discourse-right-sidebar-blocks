@@ -23,10 +23,11 @@ export default class TcRightSidebar extends Component {
       let parentCategory = null;
 
       // check if current page is subcategory
+      const categoryArg = this.outletArgs.category;
       if (
-        this.category &&
-        !this.category.has_children &&
-        this.category.parent_category_id
+        categoryArg &&
+        !categoryArg.has_children &&
+        categoryArg.parent_category_id
       ) {
         subcategory = categorySlug;
         parentCategory = category.ancestors[0].slug;
