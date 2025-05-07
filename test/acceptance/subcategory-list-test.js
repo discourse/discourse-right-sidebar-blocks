@@ -1,6 +1,6 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
-import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar - Subcategory List", function (needs) {
   const blocksJSON = [
@@ -8,11 +8,11 @@ acceptance("Right Sidebar - Subcategory List", function (needs) {
       name: "subcategory-list",
     },
   ];
-  needs.hooks.beforeEach(() => {
+  needs.hooks.beforeEach(function () {
     settings.blocks = JSON.stringify(blocksJSON);
   });
 
-  needs.hooks.afterEach(() => {
+  needs.hooks.afterEach(function () {
     settings.blocks = "[]";
   });
 
@@ -20,21 +20,19 @@ acceptance("Right Sidebar - Subcategory List", function (needs) {
     // dev category in core fixtures has subcategories
     await visit("/c/dev");
 
-    assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
-    assert.ok(
-      visible(".subcategory-list--heading"),
-      "subcategory-list heading is present"
-    );
-    assert.ok(
-      visible(".subcategory-list--item"),
-      "subcategory-list has at least one visible item"
-    );
+    assert.dom(".tc-right-sidebar").exists("sidebar element is present");
+    assert
+      .dom(".subcategory-list--heading")
+      .exists("subcategory-list heading is present");
+    assert
+      .dom(".subcategory-list--item")
+      .exists("subcategory-list has at least one visible item");
   });
 
   test("Viewing a tag route works fine", async function (assert) {
     await visit("/tag/important");
 
     // just check that no errors are raised in other routes
-    assert.ok(visible(".topic-list-body"), "main topic list is present");
+    assert.dom(".topic-list-body").exists("main topic list is present");
   });
 });

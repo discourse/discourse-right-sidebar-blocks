@@ -1,6 +1,6 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
-import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar - Top Contributors", function (needs) {
   const blocksJSON = [
@@ -14,19 +14,19 @@ acceptance("Right Sidebar - Top Contributors", function (needs) {
       ],
     },
   ];
-  needs.hooks.beforeEach(() => {
+  needs.hooks.beforeEach(function () {
     settings.blocks = JSON.stringify(blocksJSON);
   });
 
-  needs.hooks.afterEach(() => {
+  needs.hooks.afterEach(function () {
     settings.blocks = "[]";
   });
 
   test("Viewing latest", async function (assert) {
     await visit("/");
 
-    assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
-    assert.ok(visible(".rs-custom-html"), "custom-html element is present");
-    assert.ok(visible(".rs-custom-html b"), "custom-html bold tag is present");
+    assert.dom(".tc-right-sidebar").exists("sidebar element is present");
+    assert.dom(".rs-custom-html").exists("custom-html element is present");
+    assert.dom(".rs-custom-html b").exists("custom-html bold tag is present");
   });
 });

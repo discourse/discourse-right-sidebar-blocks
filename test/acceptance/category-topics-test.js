@@ -2,7 +2,7 @@ import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import { cloneJSON } from "discourse/lib/object";
 import discoveryFixture from "discourse/tests/fixtures/discovery-fixtures";
-import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar - Category Topics", function (needs) {
   const blocksJSON = [
@@ -12,11 +12,11 @@ acceptance("Right Sidebar - Category Topics", function (needs) {
     },
   ];
 
-  needs.hooks.beforeEach(() => {
+  needs.hooks.beforeEach(function () {
     settings.blocks = JSON.stringify(blocksJSON);
   });
 
-  needs.hooks.afterEach(() => {
+  needs.hooks.afterEach(function () {
     settings.blocks = "[]";
   });
 
@@ -31,16 +31,14 @@ acceptance("Right Sidebar - Category Topics", function (needs) {
   test("Viewing homepage", async function (assert) {
     await visit("/");
 
-    assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
+    assert.dom(".tc-right-sidebar").exists("sidebar element is present");
 
-    assert.ok(
-      visible(".category-topics--topic"),
-      "at least one category topic is present"
-    );
+    assert
+      .dom(".category-topics--topic")
+      .exists("at least one category topic is present");
 
-    assert.ok(
-      visible(".rs-category-topics a[href='/c/bug/1']"),
-      "bug category sidebar heading is present"
-    );
+    assert
+      .dom(".rs-category-topics a[href='/c/bug/1']")
+      .exists("bug category sidebar heading is present");
   });
 });

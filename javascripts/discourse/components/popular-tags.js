@@ -5,6 +5,7 @@ import { service } from "@ember/service";
 export default class PopularTags extends Component {
   @service site;
   @service router;
+
   @tracked topTags = null;
 
   willDestroy() {
