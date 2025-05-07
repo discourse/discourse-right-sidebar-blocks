@@ -2,22 +2,21 @@ import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import { cloneJSON } from "discourse/lib/object";
 import discoveryFixture from "discourse/tests/fixtures/discovery-fixtures";
-import { acceptance, visible } from "discourse/tests/helpers/qunit-helpers";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar", function () {
   test("Viewing latest", async function (assert) {
     await visit("/");
 
-    assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
+    assert.dom(".tc-right-sidebar").isVisible("sidebar element is present");
   });
 
   test("Viewing categories", async function (assert) {
     await visit("/categories");
 
-    assert.notOk(
-      visible(".tc-right-sidebar"),
-      "sidebar not present under /categories by default"
-    );
+    assert
+      .dom(".tc-right-sidebar")
+      .doesNotExist("sidebar not present under /categories by default");
   });
 });
 
@@ -72,52 +71,44 @@ acceptance("Right Sidebar - custom routes", function (needs) {
   test("Viewing latest", async function (assert) {
     await visit("/");
 
-    assert.notOk(
-      visible(".tc-right-sidebar"),
-      "sidebar element is not present"
-    );
+    assert.dom(".tc-right-sidebar").doesNotExist();
   });
 
   test("Viewing categories", async function (assert) {
     await visit("/categories");
 
-    assert.ok(
-      visible(".tc-right-sidebar"),
-      "sidebar present under /categories due to theme setting"
-    );
+    assert
+      .dom(".tc-right-sidebar")
+      .isVisible("sidebar present under /categories due to theme setting");
   });
 
   test("Viewing top", async function (assert) {
     await visit("/top");
-    assert.ok(
-      visible(".tc-right-sidebar"),
-      "sidebar present under /top due to theme setting"
-    );
+    assert
+      .dom(".tc-right-sidebar")
+      .isVisible("sidebar present under /top due to theme setting");
   });
 
   test("Viewing the bug category", async function (assert) {
     await visit("/c/bug/l/latest");
-    assert.ok(
-      visible(".tc-right-sidebar"),
-      "sidebar present under the bug category"
-    );
+    assert
+      .dom(".tc-right-sidebar")
+      .isVisible("sidebar present under the bug category");
   });
 
   test("Viewing the foo subcategory", async function (assert) {
     await visit("/c/bug/foo/2");
 
-    assert.ok(
-      visible(".tc-right-sidebar"),
-      "sidebar present under the foo subcategory"
-    );
+    assert
+      .dom(".tc-right-sidebar")
+      .isVisible("sidebar present under the foo subcategory");
   });
 
   test("Viewing the important tag", async function (assert) {
     await visit("/tag/important");
 
-    assert.ok(
-      visible(".tc-right-sidebar"),
-      "sidebar present under the important tag"
-    );
+    assert
+      .dom(".tc-right-sidebar")
+      .isVisible("sidebar present under the important tag");
   });
 });

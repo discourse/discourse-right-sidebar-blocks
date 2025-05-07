@@ -1,11 +1,7 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
 import DirectoryFixtures from "discourse/tests/fixtures/directory-fixtures";
-import {
-  acceptance,
-  queryAll,
-  visible,
-} from "discourse/tests/helpers/qunit-helpers";
+import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar - Top Contributors", function (needs) {
   const blocksJSON = [
@@ -30,17 +26,14 @@ acceptance("Right Sidebar - Top Contributors", function (needs) {
   test("Viewing latest", async function (assert) {
     await visit("/");
 
-    assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
-    assert.ok(
-      visible(".top-contributors--container"),
-      "top contributors element is present"
-    );
+    assert.dom(".tc-right-sidebar").exists("sidebar element is present");
+    assert
+      .dom(".top-contributors--container")
+      .exists("top contributors element is present");
 
-    assert.strictEqual(
-      queryAll(".top-contributors--user").length,
-      5,
-      "default limit is 5"
-    );
+    assert
+      .dom(".top-contributors--user")
+      .exists({ count: 5 }, "default limit is 5");
   });
 });
 
@@ -81,17 +74,14 @@ acceptance("Right Sidebar - Top Contributors - Custom count", function (needs) {
       .dom(".top-contributors--user-likes")
       .hasClass("order--likes_received");
 
-    assert.ok(visible(".tc-right-sidebar"), "sidebar element is present");
-    assert.ok(
-      visible(".top-contributors--container"),
-      "top contributors element is present"
-    );
+    assert.dom(".tc-right-sidebar").exists("sidebar element is present");
+    assert
+      .dom(".top-contributors--container")
+      .exists("top contributors element is present");
 
-    assert.strictEqual(
-      queryAll(".top-contributors--user").length,
-      3,
-      "custom limit is respected"
-    );
+    assert
+      .dom(".top-contributors--user")
+      .exists({ count: 3 }, "custom limit is respected");
   });
 });
 
