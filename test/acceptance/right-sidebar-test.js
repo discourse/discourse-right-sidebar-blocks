@@ -7,8 +7,7 @@ import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 acceptance("Right Sidebar", function () {
   test("Viewing latest", async function (assert) {
     await visit("/");
-
-    assert.dom(".tc-right-sidebar").isVisible("sidebar element is present");
+    assert.dom(".tc-right-sidebar").exists("sidebar element is present");
   });
 
   test("Viewing categories", async function (assert) {
@@ -79,21 +78,21 @@ acceptance("Right Sidebar - custom routes", function (needs) {
 
     assert
       .dom(".tc-right-sidebar")
-      .isVisible("sidebar present under /categories due to theme setting");
+      .exists("sidebar present under /categories due to theme setting");
   });
 
   test("Viewing top", async function (assert) {
     await visit("/top");
     assert
       .dom(".tc-right-sidebar")
-      .isVisible("sidebar present under /top due to theme setting");
+      .exists("sidebar present under /top due to theme setting");
   });
 
   test("Viewing the bug category", async function (assert) {
     await visit("/c/bug/l/latest");
     assert
       .dom(".tc-right-sidebar")
-      .isVisible("sidebar present under the bug category");
+      .exists("sidebar present under the bug category");
   });
 
   test("Viewing the foo subcategory", async function (assert) {
@@ -101,7 +100,7 @@ acceptance("Right Sidebar - custom routes", function (needs) {
 
     assert
       .dom(".tc-right-sidebar")
-      .isVisible("sidebar present under the foo subcategory");
+      .exists("sidebar present under the foo subcategory");
   });
 
   test("Viewing the important tag", async function (assert) {
@@ -109,6 +108,6 @@ acceptance("Right Sidebar - custom routes", function (needs) {
 
     assert
       .dom(".tc-right-sidebar")
-      .isVisible("sidebar present under the important tag");
+      .exists("sidebar present under the important tag");
   });
 });

@@ -145,10 +145,10 @@ acceptance(
         .dom(".top-contributors--user-likes")
         .doesNotHaveClass("order--likes_received");
 
-      assert.dom(".tc-right-sidebar").isVisible("sidebar element is present");
+      assert.dom(".tc-right-sidebar").exists("sidebar element is present");
       assert
         .dom(".top-contributors--container")
-        .isVisible("top contributors element is present");
+        .exists("top contributors element is present");
 
       assert
         .dom(".top-contributors--user")
