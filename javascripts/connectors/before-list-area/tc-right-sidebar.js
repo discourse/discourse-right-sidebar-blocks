@@ -1,7 +1,9 @@
 import Component from "@ember/component";
 import { service } from "@ember/service";
+import { tagName } from "@ember-decorators/component";
 import discourseComputed from "discourse/lib/decorators";
 
+@tagName("")
 export default class TcRightSidebar extends Component {
   @service router;
   @service site;
