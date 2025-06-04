@@ -32,7 +32,7 @@ export default class SubcategoryList extends Component {
   }
 
   shouldDisplay(parentCategoryId) {
-    const displayInCategories = this.args?.params?.displayInCategories
+    const displayInCategories = this.args.displayInCategories
       ?.split(",")
       .map(Number);
 

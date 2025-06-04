@@ -10,15 +10,15 @@ import { i18n } from "discourse-i18n";
 
 export default class TopContributors extends Component {
   @tracked topContributors = null;
-  order = this.args.params?.order || "likes_received";
-  period = this.args.params?.period || "yearly";
-  count = this.args.params?.count || 5;
-  excludedGroupNames = this.args.params?.excludedGroupNames || "";
+  order = this.args.order || "likes_received";
+  period = this.args.period || "yearly";
+  count = this.args.count || 5;
+  excludedGroupNames = this.args.excludedGroupNames || "";
 
   constructor() {
     super(...arguments);
     this.blockTitle =
-      this.args?.params?.title || i18n(themePrefix("top_contributors.heading"));
+      this.args.title || i18n(themePrefix("top_contributors.heading"));
 
     ajax(this.requestURL).then((data) => {
       this.topContributors = data.directory_items?.slice(0, this.count);

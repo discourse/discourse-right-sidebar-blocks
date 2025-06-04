@@ -16,9 +16,9 @@ export default class PopularTags extends Component {
 
   get shouldShowBlock() {
     const currentRoute = this.router.currentRoute;
-    const count = this.args?.params?.count || 10;
-    const excludedTags = this.args?.params?.excludedTags || [];
-    const scopeToCategory = this.args?.params?.scopeToCategory || false;
+    const count = this.args.count || 10;
+    const excludedTags = this.args.excludedTags || [];
+    const scopeToCategory = this.args.scopeToCategory || false;
     const tags =
       (scopeToCategory ? this.site.category_top_tags : this.site.top_tags) ||
       [];
@@ -48,8 +48,9 @@ export default class PopularTags extends Component {
   }
 
   shouldDisplay(categoryId) {
-    const displayInSpecificCategories =
-      this.args?.params?.displayInSpecificCategories?.split(",").map(Number);
+    const displayInSpecificCategories = this.args.displayInSpecificCategories
+      ?.split(",")
+      .map(Number);
 
     return (
       displayInSpecificCategories === undefined ||

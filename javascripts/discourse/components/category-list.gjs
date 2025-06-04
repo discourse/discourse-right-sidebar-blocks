@@ -7,9 +7,9 @@ export default class CategoryList extends Component {
   constructor() {
     super(...arguments);
     this.blockTitle =
-      this.args?.params?.title || i18n(themePrefix("category_list.heading"));
+      this.args.title || i18n(themePrefix("category_list.heading"));
 
-    this.categoryList = this.args?.params?.id.split(",");
+    this.categoryList = this.args.id.split(",");
     if (!this.categoryList) {
       return;
     }

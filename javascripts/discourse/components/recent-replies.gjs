@@ -18,8 +18,8 @@ export default class RecentReplies extends Component {
 
   constructor() {
     super(...arguments);
-    const excerptLimit = this.args?.params?.excerptLimit || 150;
-    const count = this.args?.params?.count || 5;
+    const excerptLimit = this.args.excerptLimit || 150;
+    const count = this.args.count || 5;
 
     ajax(`/posts.json`).then((data) => {
       let results = [];

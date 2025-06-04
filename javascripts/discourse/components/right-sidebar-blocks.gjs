@@ -18,7 +18,9 @@ export default class RightSidebarBlocks extends Component {
       if (block.name === "custom-html") {
         block.component = CustomHtmlRsb;
       } else {
-        block.component = getOwner(this).lookup(`component:${block.name}`);
+        block.component = getOwner(this).resolveRegistration(
+          `component:${block.name}`
+        );
       }
 
       if (block.component) {
@@ -29,6 +31,7 @@ export default class RightSidebarBlocks extends Component {
             block.parsedParams[p.name] = p.value;
           });
         }
+
         blocksArray.push(block);
       } else {
         // eslint-disable-next-line no-console

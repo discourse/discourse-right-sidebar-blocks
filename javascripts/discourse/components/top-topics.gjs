@@ -14,8 +14,8 @@ export default class TopTopics extends Component {
 
   constructor() {
     super(...arguments);
-    const count = this.args?.params?.count || 5;
-    const period = this.args?.params?.period || "weekly";
+    const count = this.args.count || 5;
+    const period = this.args.period || "weekly";
     const topTopicsUrl = "/top.json?period=" + period.toString();
 
     ajax(topTopicsUrl).then((data) => {

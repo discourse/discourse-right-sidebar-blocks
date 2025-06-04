@@ -13,10 +13,10 @@ export default class TagTopics extends Component {
 
   constructor() {
     super(...arguments);
-    const count = this.args?.params?.count || 5;
-    const tagTopicsUrl = "/tag/" + this.args?.params?.tag + ".json";
+    const count = this.args.count || 5;
+    const tagTopicsUrl = `/tag/${this.args.tag}.json`;
 
-    this.blockTitle = this.args?.params?.title || "#" + this.args?.params?.tag;
+    this.blockTitle = this.args.title || "#" + this.args.tag;
 
     ajax(tagTopicsUrl).then((data) => {
       let results = [];
