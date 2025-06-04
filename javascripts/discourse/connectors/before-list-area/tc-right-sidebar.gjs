@@ -2,6 +2,7 @@ import Component from "@ember/component";
 import { service } from "@ember/service";
 import { tagName } from "@ember-decorators/component";
 import discourseComputed from "discourse/lib/decorators";
+import RightSidebarBlocks from "../../components/right-sidebar-blocks";
 
 @tagName("")
 export default class TcRightSidebar extends Component {
@@ -46,4 +47,12 @@ export default class TcRightSidebar extends Component {
     // if theme setting is empty, show everywhere except /categories
     return currentRouteName !== "discovery.categories";
   }
+
+  <template>
+    {{#if this.showSidebar}}
+      <div class="tc-right-sidebar">
+        <RightSidebarBlocks />
+      </div>
+    {{/if}}
+  </template>
 }

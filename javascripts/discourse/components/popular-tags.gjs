@@ -1,6 +1,7 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
+import { i18n } from "discourse-i18n";
 
 export default class PopularTags extends Component {
   @service site;
@@ -55,4 +56,24 @@ export default class PopularTags extends Component {
       displayInSpecificCategories.includes(categoryId)
     );
   }
+
+  <template>
+    {{#if this.shouldShowBlock}}
+      <h3 class="popular-tags-heading">
+        {{i18n (themePrefix "popular_tags.heading")}}
+      </h3>
+
+      <div class="popular-tags__container">
+        {{#each this.topTags as |t|}}
+          <a href="/tag/{{t}}" class="popular-tags__tag">
+            {{t}}
+          </a>
+        {{/each}}
+      </div>
+
+      <a class="popular-tags__view-all" href={{this.viewAllUrl}}>
+        {{i18n (themePrefix "popular_tags.view_all")}}
+      </a>
+    {{/if}}
+  </template>
 }

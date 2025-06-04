@@ -1,4 +1,5 @@
 import Component from "@glimmer/component";
+import categoryLink from "discourse/helpers/category-link";
 import Category from "discourse/models/category";
 import { i18n } from "discourse-i18n";
 
@@ -16,4 +17,18 @@ export default class CategoryList extends Component {
       arr[i] = Category.findById(id);
     });
   }
+
+  <template>
+    <h3 class="category-list__heading">
+      {{this.blockTitle}}
+    </h3>
+
+    <div class="category-list__container">
+      {{#each this.categoryList as |category|}}
+        <div class="category-list__category">
+          {{categoryLink category}}
+        </div>
+      {{/each}}
+    </div>
+  </template>
 }
