@@ -1,6 +1,7 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
+import { i18n } from "discourse-i18n";
 
 export default class PopularTags extends Component {
   @service site;
@@ -15,9 +16,9 @@ export default class PopularTags extends Component {
 
   get shouldShowBlock() {
     const currentRoute = this.router.currentRoute;
-    const count = this.args?.params?.count || 10;
-    const excludedTags = this.args?.params?.excludedTags || [];
-    const scopeToCategory = this.args?.params?.scopeToCategory || false;
+    const count = this.args.count || 10;
+    const excludedTags = this.args.excludedTags || [];
+    const scopeToCategory = this.args.scopeToCategory || false;
     const tags =
       (scopeToCategory ? this.site.category_top_tags : this.site.top_tags) ||
       [];
@@ -47,12 +48,33 @@ export default class PopularTags extends Component {
   }
 
   shouldDisplay(categoryId) {
-    const displayInSpecificCategories =
-      this.args?.params?.displayInSpecificCategories?.split(",").map(Number);
+    const displayInSpecificCategories = this.args.displayInSpecificCategories
+      ?.split(",")
+      .map(Number);
 
     return (
       displayInSpecificCategories === undefined ||
       displayInSpecificCategories.includes(categoryId)
     );
   }
+
+  <template>
+    {{#if this.shouldShowBlock}}
+      <h3 class="popular-tags-heading">
+        {{i18n (themePrefix "popular_tags.heading")}}
+      </h3>
+
+      <div class="popular-tags__container">
+        {{#each this.topTags as |t|}}
+          <a href="/tag/{{t}}" class="popular-tags__tag">
+            {{t}}
+          </a>
+        {{/each}}
+      </div>
+
+      <a class="popular-tags__view-all" href={{this.viewAllUrl}}>
+        {{i18n (themePrefix "popular_tags.view_all")}}
+      </a>
+    {{/if}}
+  </template>
 }

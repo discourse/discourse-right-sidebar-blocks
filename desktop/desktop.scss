@@ -6,7 +6,7 @@
   display: none;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (width >= 767px) {
   // Show the sidebar at 767px
   .tc-right-sidebar {
     display: block;
