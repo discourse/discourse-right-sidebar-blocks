@@ -1,5 +1,4 @@
 import Component from "@glimmer/component";
-import { cached } from "@glimmer/tracking";
 import { getOwner } from "@ember/owner";
 import curryComponent from "ember-curry-component";
 import PluginOutlet from "discourse/components/plugin-outlet";
@@ -8,7 +7,6 @@ import deprecated from "discourse/lib/deprecated";
 import { getAvailableBlocks } from "../pre-initializers/right-sidebar-blocks-registry";
 
 export default class RightSidebarBlocks extends Component {
-  @cached
   get blocks() {
     const availableBlocks = getAvailableBlocks();
 
