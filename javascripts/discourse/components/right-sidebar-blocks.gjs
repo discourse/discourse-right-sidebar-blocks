@@ -25,12 +25,17 @@ export default class RightSidebarBlocks extends Component {
 
       if (block.component) {
         block.classNames = `rs-component rs-${block.name}`;
-        block.parsedParams = {};
+
+        const parsedParams = {};
         if (block.params) {
           block.params.forEach((p) => {
-            block.parsedParams[p.name] = p.value;
+            parsedParams[p.name] = p.value;
           });
         }
+
+        // `params` key is for backwards compatibility.
+        // New components can use the top level curried arguments
+        block.parsedParams = { params: parsedParams, ...parsedParams };
 
         blocksArray.push(block);
       } else {
