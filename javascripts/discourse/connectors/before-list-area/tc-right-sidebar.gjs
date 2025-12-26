@@ -13,9 +13,9 @@ export default class TcRightSidebar extends Component {
     "router.currentRouteName",
     "router.currentRoute.attributes.category",
     "router.currentRoute.attributes.category.slug",
-    "router.currentRoute.attributes.tag.id"
+    "router.currentRoute.attributes.tag.name"
   )
-  showSidebar(currentRouteName, category, categorySlug, tagId) {
+  showSidebar(currentRouteName, category, categorySlug, tagName) {
     if (this.site.mobileView) {
       return false;
     }
@@ -40,7 +40,7 @@ export default class TcRightSidebar extends Component {
         selectedRoutes.includes(currentRouteName) ||
         selectedRoutes.includes(`c/${categorySlug}`) ||
         selectedRoutes.includes(`c/${parentCategory}/${subcategory}`) ||
-        selectedRoutes.includes(`tag/${tagId}`)
+        selectedRoutes.includes(`tag/${tagName}`)
       );
     }
 
