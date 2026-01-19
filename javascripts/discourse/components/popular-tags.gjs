@@ -24,14 +24,19 @@ export default class PopularTags extends Component {
       [];
     const category = currentRoute.attributes?.category;
 
+    // TODO(https://github.com/discourse/discourse/pull/36678): The string check can be
+    // removed using .discourse-compatibility once the PR is merged.
+    const normalizedTags = tags.map((tag) =>
+      typeof tag === "string" ? tag : tag.name
+    );
     if (excludedTags.length !== 0) {
-      this.topTags = tags
+      this.topTags = normalizedTags
         .filter((tag) => {
           return excludedTags.indexOf(tag) === -1;
         })
         .slice(0, count);
     } else {
-      this.topTags = (tags || []).slice(0, count);
+      this.topTags = normalizedTags.slice(0, count);
     }
 
     if (this.topTags.length === 0) {
