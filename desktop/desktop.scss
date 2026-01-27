@@ -38,7 +38,7 @@
   display: grid;
   grid-template-columns: auto 25%;
   grid-template-areas: "left right";
-  grid-column-gap: 1em;
+  column-gap: 1em;
   cursor: pointer;
 }
 
