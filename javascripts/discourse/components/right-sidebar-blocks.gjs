@@ -1,26 +1,32 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { getOwner } from "@ember/owner";
 import curryComponent from "ember-curry-component";
 import PluginOutlet from "discourse/components/plugin-outlet";
 import lazyHash from "discourse/helpers/lazy-hash";
-import CustomHtmlRsb from "./custom-html-rsb";
+import deprecated from "discourse/lib/deprecated";
+import { getAvailableBlocks } from "../pre-initializers/right-sidebar-blocks-registry";
 
 export default class RightSidebarBlocks extends Component {
-  @tracked blocks = [];
-
-  constructor() {
-    super(...arguments);
+  get blocks() {
+    const availableBlocks = getAvailableBlocks();
 
     const blocksArray = [];
 
     JSON.parse(settings.blocks).forEach((block) => {
-      if (block.name === "custom-html") {
-        block.component = CustomHtmlRsb;
+      const rsbRegistryResult = availableBlocks.get(block.name);
+      if (rsbRegistryResult) {
+        block.component = rsbRegistryResult;
       } else {
-        block.component = getOwner(this).resolveRegistration(
+        const emberRegistryResult = getOwner(this).resolveRegistration(
           `component:${block.name}`
         );
+        if (emberRegistryResult) {
+          block.component = emberRegistryResult;
+          deprecated(
+            `The block "${block.name}" is not registered in the right-sidebar-blocks registry. Register it using \`api.registerValueTransformer("right-sidebar-blocks", ({ value: blocks }) => blocks.set("${block.name}", MyImportantComponent));\``,
+            { id: "discourse.right-sidebar-blocks.component-resolution" }
+          );
+        }
       }
 
       if (block.component) {
@@ -46,7 +52,7 @@ export default class RightSidebarBlocks extends Component {
       }
     });
 
-    this.blocks = blocksArray;
+    return blocksArray;
   }
 
   <template>
