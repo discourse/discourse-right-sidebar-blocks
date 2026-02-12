@@ -1,8 +1,17 @@
 import { visit } from "@ember/test-helpers";
 import { test } from "qunit";
+import { cloneJSON } from "discourse/lib/object";
+import discoveryFixture from "discourse/tests/fixtures/discovery-fixtures";
 import { acceptance } from "discourse/tests/helpers/qunit-helpers";
 
 acceptance("Right Sidebar - Subcategory List", function (needs) {
+  needs.pretender((server, helper) => {
+    server.get("/tag/1/l/latest.json", () =>
+      helper.response(
+        cloneJSON(discoveryFixture["/tag/important/l/latest.json"])
+      )
+    );
+  });
   const blocksJSON = [
     {
       name: "subcategory-list",
@@ -30,7 +39,7 @@ acceptance("Right Sidebar - Subcategory List", function (needs) {
   });
 
   test("Viewing a tag route works fine", async function (assert) {
-    await visit("/tag/important");
+    await visit("/tag/important/1");
 
     // just check that no errors are raised in other routes
     assert.dom(".topic-list-body").exists("main topic list is present");

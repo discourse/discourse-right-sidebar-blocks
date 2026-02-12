@@ -6,7 +6,7 @@ module PageObjects
       SELECTOR = ".popular-tags__container"
 
       def has_tag_item?(tag)
-        has_css?("#{SELECTOR} .popular-tags__tag[href='/tag/#{tag.name}']", text: tag.name)
+        has_css?("#{SELECTOR} .popular-tags__tag[href='#{tag.url}']", text: tag.name)
       end
 
       def has_no_tag_item?(tag)

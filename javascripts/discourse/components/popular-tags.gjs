@@ -20,24 +20,14 @@ export default class PopularTags extends Component {
     const excludedTags = this.args.excludedTags || [];
     const scopeToCategory = this.args.scopeToCategory || false;
     const tags =
-      (scopeToCategory ? this.site.category_top_tags : this.site.top_tags) ||
-      [];
+      (scopeToCategory ? this.site.categoryTopTags : this.site.topTags) || [];
     const category = currentRoute.attributes?.category;
 
-    // TODO(https://github.com/discourse/discourse/pull/36678): The string check can be
-    // removed using .discourse-compatibility once the PR is merged.
-    const normalizedTags = tags.map((tag) =>
-      typeof tag === "string" ? tag : tag.name
-    );
+    let filteredTags = tags;
     if (excludedTags.length !== 0) {
-      this.topTags = normalizedTags
-        .filter((tag) => {
-          return excludedTags.indexOf(tag) === -1;
-        })
-        .slice(0, count);
-    } else {
-      this.topTags = normalizedTags.slice(0, count);
+      filteredTags = tags.filter((tag) => !excludedTags.includes(tag.name));
     }
+    this.topTags = filteredTags.slice(0, count);
 
     if (this.topTags.length === 0) {
       return false;
@@ -70,9 +60,9 @@ export default class PopularTags extends Component {
       </h3>
 
       <div class="popular-tags__container">
-        {{#each this.topTags as |t|}}
-          <a href="/tag/{{t}}" class="popular-tags__tag">
-            {{t}}
+        {{#each this.topTags as |tag|}}
+          <a href={{tag.url}} class="popular-tags__tag">
+            {{tag.name}}
           </a>
         {{/each}}
       </div>

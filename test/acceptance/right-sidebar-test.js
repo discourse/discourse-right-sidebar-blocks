@@ -60,7 +60,7 @@ acceptance("Right Sidebar - custom routes", function (needs) {
       );
     });
 
-    server.get(`/tag/important/l/latest.json`, () => {
+    server.get("/tag/1/l/latest.json", () => {
       return helper.response(
         cloneJSON(discoveryFixture["/tag/important/l/latest.json"])
       );
@@ -104,7 +104,7 @@ acceptance("Right Sidebar - custom routes", function (needs) {
   });
 
   test("Viewing the important tag", async function (assert) {
-    await visit("/tag/important");
+    await visit("/tag/important/1");
 
     assert
       .dom(".tc-right-sidebar")
