@@ -1,7 +1,8 @@
+/* eslint-disable ember/no-classic-components */
 import Component from "@ember/component";
+import { computed } from "@ember/object";
 import { service } from "@ember/service";
 import { tagName } from "@ember-decorators/component";
-import discourseComputed from "discourse/lib/decorators";
 import RightSidebarBlocks from "../../components/right-sidebar-blocks";
 
 @tagName("")
@@ -9,13 +10,13 @@ export default class TcRightSidebar extends Component {
   @service router;
   @service site;
 
-  @discourseComputed(
+  @computed(
     "router.currentRouteName",
     "router.currentRoute.attributes.category",
     "router.currentRoute.attributes.category.slug",
     "router.currentRoute.attributes.tag.name"
   )
-  showSidebar(currentRouteName, category, categorySlug, routeTagName) {
+  get showSidebar() {
     if (this.site.mobileView) {
       return false;
     }
@@ -32,20 +33,25 @@ export default class TcRightSidebar extends Component {
         !categoryArg.has_children &&
         categoryArg.parent_category_id
       ) {
-        subcategory = categorySlug;
-        parentCategory = category.ancestors[0].slug;
+        subcategory = this.router?.currentRoute?.attributes?.category?.slug;
+        parentCategory =
+          this.router?.currentRoute?.attributes?.category?.ancestors[0].slug;
       }
 
       return (
-        selectedRoutes.includes(currentRouteName) ||
-        selectedRoutes.includes(`c/${categorySlug}`) ||
+        selectedRoutes.includes(this.router?.currentRouteName) ||
+        selectedRoutes.includes(
+          `c/${this.router?.currentRoute?.attributes?.category?.slug}`
+        ) ||
         selectedRoutes.includes(`c/${parentCategory}/${subcategory}`) ||
-        selectedRoutes.includes(`tag/${routeTagName}`)
+        selectedRoutes.includes(
+          `tag/${this.router?.currentRoute?.attributes?.tag?.name}`
+        )
       );
     }
 
     // if theme setting is empty, show everywhere except /categories
-    return currentRouteName !== "discovery.categories";
+    return this.router?.currentRouteName !== "discovery.categories";
   }
 
   <template>

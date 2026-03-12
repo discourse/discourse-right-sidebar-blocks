@@ -1,5 +1,4 @@
 import Component from "@glimmer/component";
-import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
 import SubCategoryItem from "discourse/components/sub-category-item";
 import { i18n } from "discourse-i18n";
@@ -7,39 +6,23 @@ import { i18n } from "discourse-i18n";
 export default class SubcategoryList extends Component {
   @service router;
 
-  @tracked parentCategory = null;
-
-  willDestroy() {
-    super.willDestroy(...arguments);
-    this.parentCategory = null;
+  get parentCategory() {
+    return this.router.currentRoute.attributes?.category;
   }
 
   get shouldShowBlock() {
-    const currentRoute = this.router.currentRoute;
-
-    if (!currentRoute.attributes?.category) {
+    if (!this.parentCategory.subcategories) {
       return false;
     }
 
-    const category = currentRoute.attributes.category;
-    this.parentCategory = category;
-
-    if (category.subcategories && this.shouldDisplay(category.id)) {
+    if (this.args.displayInCategories === undefined) {
       return true;
     }
 
-    return false;
-  }
-
-  shouldDisplay(parentCategoryId) {
-    const displayInCategories = this.args.displayInCategories
+    return this.args.displayInCategories
       ?.split(",")
-      .map(Number);
-
-    return (
-      displayInCategories === undefined ||
-      displayInCategories.includes(parentCategoryId)
-    );
+      .map(Number)
+      .includes(this.parentCategory.id);
   }
 
   <template>
