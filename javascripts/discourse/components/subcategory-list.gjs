@@ -11,7 +11,7 @@ export default class SubcategoryList extends Component {
   }
 
   get shouldShowBlock() {
-    if (!this.parentCategory.subcategories) {
+    if (!this.parentCategory?.subcategories) {
       return false;
     }
 
