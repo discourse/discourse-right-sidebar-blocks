@@ -1,24 +1,54 @@
 import Component from "@glimmer/component";
 import { service } from "@ember/service";
+import getURL from "discourse/lib/get-url";
 import { i18n } from "discourse-i18n";
 
 export default class PopularTags extends Component {
   @service site;
   @service router;
 
+  get excludedTags() {
+    if (!this.args.excludedTags) {
+      return [];
+    }
+
+    if (Array.isArray(this.args.excludedTags)) {
+      return this.args.excludedTags;
+    }
+
+    return this.args.excludedTags
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter(Boolean);
+  }
+
   get topTags() {
-    const excludedTags = this.args.excludedTags || [];
     const tags =
       (this.args.scopeToCategory
-        ? this.site.categoryTopTags
-        : this.site.topTags) || [];
+        ? this.site.category_top_tags
+        : this.site.top_tags) || [];
 
     let filteredTags = tags;
-    if (excludedTags.length > 0) {
-      filteredTags = tags.filter((tag) => !excludedTags.includes(tag.name));
+    if (this.excludedTags.length > 0) {
+      filteredTags = tags.filter(
+        (tag) => !this.excludedTags.includes(tag.name)
+      );
     }
 
     return filteredTags.slice(0, this.args.count || 10);
+  }
+
+  tagUrl(tag) {
+    if (tag.url) {
+      return tag.url;
+    }
+
+    if (tag.id) {
+      const slug = tag.slug || `${tag.id}-tag`;
+      return getURL(`/tag/${slug}/${tag.id}`);
+    }
+
+    return getURL(`/tag/${tag.name.replaceAll(".", "%2E")}`);
   }
 
   get shouldShowBlock() {
@@ -44,7 +74,7 @@ export default class PopularTags extends Component {
 
       <div class="popular-tags__container">
         {{#each this.topTags as |tag|}}
-          <a href={{tag.url}} class="popular-tags__tag">
+          <a href={{this.tagUrl tag}} class="popular-tags__tag">
             {{tag.name}}
           </a>
         {{/each}}
